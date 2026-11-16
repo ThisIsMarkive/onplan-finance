@@ -1,0 +1,17 @@
+[
+  {
+    "metadata": {
+      "name": "econ-ark",
+      "version": "0.17.2"
+    },
+    "download_info": {
+      "url": "http<local-path-redacted>",
+      "archive_info": {
+        "hash": "sha256=e3906d0010f7c2cf1b71288a737bbd2e448e315314ce781dac5488e6be6822e3",
+        "hashes": {
+          "sha256": "e3906d0010f7c2cf1b71288a737bbd2e448e315314ce781dac5488e6be6822e3"
+        }
+      }
+    }
+  }
+]

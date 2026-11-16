@@ -1,0 +1,30 @@
+{
+  "fixture": "fictional-household.json",
+  "status": "합성·가상 입력. 통계의 대표가구, 실제 인터뷰, 실제 계약·실행·성과가 아님. 앱 기본 입력은 빈칸이며 이 예제는 명시적으로 불러올 때만 사용한다.",
+  "baseSource": "work/customer/customer-input-v1.json",
+  "baseMapping": {
+    "cash": "수시입출금 800만원+정기예금 2200만원. 정기예금 원금 중도접근 가능이라는 월예산 가정이며 일자별 유동성 검증 아님.",
+    "educationEarmark": "총예금 중 2000만원의 가상 목표배정. 별도 자산으로 합산하지 않음.",
+    "retirementAssets": "연금저축3500만원+IRP1500만원+DC2500만원. 미래 회사 DC납입은 미포함.",
+    "livingExpenses": "현재 교육비65만원·비정기지출 월평균35만원 포함350만원.",
+    "educationDate": "2034-02, 2026-12부터87회. 미래명목 희망6000만원·최소4000만원. 별도 물가 가산 없음."
+  },
+  "newFictionalAssumptions": {
+    "prepaymentFeePct": "0.5%. 실제 은행 계약 아님. 최초12개월 동안 매월 선형감소(1개월째0.5%,12개월째0.5%/12,13개월째0%).",
+    "feeMonthsRemaining": 12,
+    "extraMonthly": "40만원. 기존 미배정 월43.94만원 범위의 동일 추가배분 예산. 잔여액은 현금에 남음.",
+    "cashFloor": "교육배정 제외 예금500만원. 자산을 새로 만들지 않으며 의무지출은 하한 침범 가능. 납입 재개는 하한 회복과 연결.",
+    "stressStartMonth": "2026-12부터6개월. 시작시점은 새 시나리오 가정.",
+    "pausePolicy": "스트레스 동안 교육·연금·투자·추가배분 중단. 정상 복귀 후 의무지출·일반현금 적립·현금하한을 고려하여 기존납입을 같은 비율로 충족한 뒤 추가배분.",
+    "educationSavingsEnd": "목표액 도달 또는 비교 기준월 이후 교육 납입 종료. 실제 대학 등록금 인출 이벤트는 미모형화.",
+    "fixedLongProjection": "총300개월에 대한 만기는 입력급여·지출이 계속되는 조건부 참고. 퇴직소득 변화·수익·물가·세금은 없음."
+  },
+  "reference": {
+    "repository": "https://github.com/JoelLewis/finance_skills",
+    "commit": "5c498eacf7057e31238c4c5a8012a1afe9ec7c8a",
+    "file": "time_value_of_money.py",
+    "sha256": "fef6099e25f517e6848c5a59da990285a2ca10f44765203ab333aa9ac37b2375",
+    "license": "MIT, Copyright (c) 2026 Joel Lewis; JOEL_LICENSE.txt preserved",
+    "use": "독립 Python 검사의 정액 원리금 및 원리금표 기준값. 브라우저 계산에 외부라이브러리 로딩 없음."
+  }
+}

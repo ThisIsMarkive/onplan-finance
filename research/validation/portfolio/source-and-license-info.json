@@ -1,0 +1,80 @@
+{
+  "retrieved_utc": "2026-11-16T04:07:54.606580+00:00",
+  "repository": "http<local-path-redacted>",
+  "version_tested": "1.6.0",
+  "requested_tag": "v1.6.0",
+  "requested_commit": "0186e707a0d2ec03406608d3400539d0f140c625",
+  "license": "MIT; preserve copyright and permission notice",
+  "files": [
+    {
+      "upstream_path": "pypfopt/efficient_frontier/efficient_cvar.py",
+      "url": "http<local-path-redacted>",
+      "local_file": "source_snapshot\\pypfopt__efficient_frontier__efficient_cvar.py",
+      "sha256": "4ebcdd75d0a2afb969c194efd4c67f9022c601cf3a0e007d5e7aaaeb96ceb31d"
+    },
+    {
+      "upstream_path": "pypfopt/objective_functions.py",
+      "url": "http<local-path-redacted>",
+      "local_file": "source_snapshot\\pypfopt__objective_functions.py",
+      "sha256": "a8ec8dcb6240627fa19cd1d8012b5509432b505623a278f2fe962a95d63d9317"
+    },
+    {
+      "upstream_path": "tests/test_efficient_cvar.py",
+      "url": "http<local-path-redacted>",
+      "local_file": "source_snapshot\\tests__test_efficient_cvar.py",
+      "sha256": "426cfb2450645528f2cbdf37050f8396578b2bc0364c3a3fbd4b4398eff18947"
+    },
+    {
+      "upstream_path": "LICENSE",
+      "url": "http<local-path-redacted>",
+      "local_file": "source_snapshot\\LICENSE",
+      "sha256": "0e401d63a7b31bde363ca577a2537af1c345fccbf532edc55cb589f568b2a883"
+    },
+    {
+      "upstream_path": "pyproject.toml",
+      "url": "http<local-path-redacted>",
+      "local_file": "source_snapshot\\pyproject.toml",
+      "sha256": "19698dfdd5967f46e0a03d028337a1c38e8edf29887583d0aac120e9579cdd16"
+    }
+  ],
+  "errors": [],
+  "installed_source_comparisons": [
+    {
+      "file": "pypfopt/efficient_frontier/efficient_cvar.py",
+      "installed_sha256": "4ebcdd75d0a2afb969c194efd4c67f9022c601cf3a0e007d5e7aaaeb96ceb31d",
+      "upstream_sha256": "4ebcdd75d0a2afb969c194efd4c67f9022c601cf3a0e007d5e7aaaeb96ceb31d",
+      "exact_bytes_equal": true,
+      "equal_after_CRLF_normalization": true
+    },
+    {
+      "file": "pypfopt/objective_functions.py",
+      "installed_sha256": "a8ec8dcb6240627fa19cd1d8012b5509432b505623a278f2fe962a95d63d9317",
+      "upstream_sha256": "a8ec8dcb6240627fa19cd1d8012b5509432b505623a278f2fe962a95d63d9317",
+      "exact_bytes_equal": true,
+      "equal_after_CRLF_normalization": true
+    }
+  ],
+  "tag_verification": {
+    "url": "http<local-path-redacted>",
+    "resolved_commit": "0186e707a0d2ec03406608d3400539d0f140c625",
+    "matches_requested_commit": true
+  },
+  "pypi_release": {
+    "url": "http<local-path-redacted>",
+    "artifacts": [
+      {
+        "filename": "pyportfolioopt-1.6.0-py3-none-any.whl",
+        "sha256": "fcdff5dfb4e7d0c477d8b76e9b5aff58defc30370fc3cb096e95dd46ae43d617",
+        "url": "http<local-path-redacted>",
+        "upload_time": "2026-02-26T23:29:39.493214Z"
+      },
+      {
+        "filename": "pyportfolioopt-1.6.0.tar.gz",
+        "sha256": "de5ea1914d6ca6bc83c54a954be123bd9c770275c769d1d70fb8760092cd5e9b",
+        "url": "http<local-path-redacted>",
+        "upload_time": "2026-02-26T23:29:41.267056Z"
+      }
+    ]
+  },
+  "scope_note": "Only the two named installed modules were byte-compared with the pinned commit; this is not whole-package equivalence."
+}

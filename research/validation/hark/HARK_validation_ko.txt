@@ -1,0 +1,52 @@
+HARK 0.17.2 실제 실행 검증 — 2026-11-16
+
+결론
+고객과 무관한 합성 2기간 소비·저축 모형에서 12개 검사가 통과했다. HARK를 설치하고 실행할 수 있으며, 검토한 계산은 별도 수학적 해와 일치했다. 생애 전체 설계, 한국 제도, 위험자산 포트폴리오, 고객 적합성 검증을 완료했다는 뜻은 아니다.
+
+고정 버전과 환경
+- econ-ark 0.17.2, release commit 269085077b84cb50feb49d0cd54bbf4da5fa3199.
+- Python 3.12.14; numpy 2.5.5; scipy 1.18.1; numba 0.68.1; llvmlite 0.50.0; pandas 3.1.1; sympy 1.14.0.
+- 전체 설치 버전은 requirements-lock.txt, 다운로드 URL·해시는 install-report.json과 install-sympy-report.json.
+- PyPI wheel SHA256: e3906d0010f7c2cf1b71288a737bbd2e448e315314ce781dac5488e6be6822e3.
+- 설치된 ConsIndShockModel.py의 Git blob은 안정판 소스의 1106643c9051d2c43ccd8ed3792d3af0bda28fd1과 일치.
+- 라이선스 Apache-2.0. HARK-LICENSE.txt 보존. HARK 소스는 수정하지 않았다.
+- 작업 폴더의 독립 venv에 설치했으며 기존 전역 Python 패키지는 변경하지 않았다.
+
+실제로 발견하고 처리한 문제
+기본 sandbox에서는 PyPI 네트워크가 WinError 10013으로 차단되었다. 승인된 공개 패키지 설치를 network escalation으로 재시도하여 설치했다.
+첫 실행은 HARK/simulator.py의 sympy import에서 실패했다. 0.17.2의 requirements/base.txt에 sympy가 없으며, pip check는 이 누락을 잡지 못하고 통과했다. attempt-1-import-failure.json/log에 실제 오류를 보존했다. sympy 1.14.0과 mpmath 1.3.0을 격리 환경에 추가한 뒤 재실행했다. 임의 오류 예시가 아니다.
+
+검증 입력
+고객 정보 없이 1개 의사결정 기간과 종말기로 구성했다. CRRA=2, 효용 할인계수=0.96, 무위험 총수익률=1.02, 생존확률=1, 영구소득 성장=1, 차입금지, 유증동기 없음. 자원은 영구소득으로 정규화하며 특정 원화 금액 또는 월/연 단위가 아니다.
+결정론 입력의 다음 기간 소득은 1. 확률 입력은 평균1, 로그표준편차0.2인 소득의 7개 이산 근사값이다. 이는 한국의 실측 소득위험이나 실제 고객 가정이 아니다.
+401개 자원점(0.05~10)에서 검토했다. 자산격자40/120/360개를 비교했다.
+
+독립 검산과 결과
+1. 결정론: 2기간 CRRA 일차조건에서 직접 얻은 닫힌해와 비교. 최대 소비함수 절대오차 1.7763568394002505e-15. 종말기 전액소비 오차0.
+2. 확률소득: HARK의 endogenous-grid 알고리즘과 별도로 scipy.brentq로 일차조건을 푼 해와 비교했다. 같은 이산 소득분포를 사용한다.
+   격자40: 최대 절대오차4.848308453864192e-05.
+   격자120: 최대 절대오차5.3009530344150235e-06.
+   격자360: 최대 절대오차5.748357994050934e-07.
+   세밀격자의 비제약 구간 최대 상대 Euler잔차2.388352010827729e-06. 차입제약 경계의 KKT 위반0.
+3. 모든 검토 자원점의 소비는 유한·양수이고 저축은0 이상이다.
+4. HARK 실제 순방향 계산을 64개 합성 상태, 1기간에 실행했다. 예산·자원·수익 전이와 정책 적용 오차는0. 초기화 후 같은 시드 재실행 오차0. 금융목표 성공률은 계산하지 않았다.
+5. 설치된 핵심 소스의 안정판 일치 확인 포함 총12개 검사 통과. 허용오차는 최초 계산 전에 설정했으며 결과에 맞춰 조정하지 않았다.
+6. 최종 환경 pip check도 통과했다. 전체 스크립트 실행시간 약12.4초(설치시간 제외)로 관측했으며 일반 성능 보장은 아니다.
+
+의사결정 구조에 넣을 가치와 한계
+단순 현금흐름 장부는 주어진 소비·저축 규칙의 결과를 계산한다. HARK는 효용·소득위험 가정 아래 상태별 소비·저축 규칙 자체를 구한다. 예를 들어 이 합성 입력의 정규화 자원1.045에서 결정론 소비1.02804348, 소득위험 소비1.00226473으로 계산되어 예방적 저축의 작동을 확인했다. 이 차이를 한국의 적정 비상자금이나 추천 저축액으로 번역하면 안 된다.
+조건부 채택: 소득위험과 소비·저축의 절충이 핵심이며 모수·제약을 설명할 수 있을 때 비교 실험 엔진으로 활용한다. 핵심 원화 현금흐름·목표평가·한국 계좌/세금 규칙은 별도 모듈로 유지한다. 일반 재무설계의 본체로 바로 채택하지 않는다.
+이번 검증은 2기간·단일무위험자산·차입금지에 한정된다. 불확실성 분포의 한국 적합성, 장기모형, PortfolioConsumerType, 한국 연금·세금·대출계약, 전체 upstream 테스트는 미검증이다. 이산분포 자체의 근사오차도 이번 독립 해 비교로 검증되는 것은 아니다.
+
+재실행
+Python 3.12 환경에서 새 venv를 만든 뒤 requirements-lock.txt로 패키지를 설치하고 python validate_hark.py를 실행한다. 파일은 스크립트와 같은 폴더에 생성된다. 기존 검증 폴더에서는 .venv/Scripts/python.exe validate_hark.py로 실행할 수 있다. 그래프/numba 캐시는 해당 작업 폴더를 지정하여 실행했다.
+최종 결과: validation-results.json, policy-comparison.csv, run.log.
+최초 실패: attempt-1-import-failure.json/log.
+설치 근거: install.log, install-escalated.log, install-report.json, install-sympy.log, install-sympy-report.json, pip-check-after-repair.log.
+배포용 복사에는 .venv와 캐시 폴더를 포함할 필요가 없다.
+
+원출처
+https://github.com/econ-ark/HARK/tree/269085077b84cb50feb49d0cd54bbf4da5fa3199
+https://github.com/econ-ark/HARK/blob/269085077b84cb50feb49d0cd54bbf4da5fa3199/requirements/base.txt
+https://github.com/econ-ark/HARK/blob/269085077b84cb50feb49d0cd54bbf4da5fa3199/HARK/ConsumptionSaving/ConsIndShockModel.py
+https://github.com/econ-ark/HARK/releases/tag/0.17.2

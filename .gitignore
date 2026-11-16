@@ -1,0 +1,14 @@
+dist/
+site.tar.gz
+.env
+.env.*
+!.env.example
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+.venvs/
+*.log
+.openai/*.local.json
+fixtures/fictional-household-results.json
+.onplan-runtime/

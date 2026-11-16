@@ -1,0 +1,369 @@
+{
+  "schema_version": "0.1",
+  "created_utc": "2026-11-16T04:22:34.060468+00:00",
+  "python": "3.12.14",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "fixture_kind": "synthetic mathematical verification only; not customer scenario",
+  "source_sha256": "2d41816289c16b560bde6c0b4885885026f03af47ae090fb64d7b2820a3e4cc9",
+  "checks": [
+    {
+      "name": "internal_transfer_net_worth",
+      "actual": "250",
+      "expected": "250",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "cash_reduced_once",
+      "actual": "60",
+      "expected": "60",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "liquidation_fee_not_double_counted",
+      "actual": "248",
+      "expected": "248",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "repayment_capped_at_debt",
+      "actual": "50",
+      "expected": "50",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "principal_repayment_net_worth",
+      "actual": "248",
+      "expected": "248",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "overinvestment_rejected",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "oversale_rejected",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "nonfinite_input_rejected",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "month_hand_calculation_net_worth",
+      "actual": "255.0",
+      "expected": "255",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "month_hand_calculation_cash",
+      "actual": "80",
+      "expected": "80",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "month_hand_calculation_debt",
+      "actual": "45.0",
+      "expected": "45",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "essential_cost_shortage_7",
+      "actual": "7",
+      "expected": "7",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "arrears_preserve_unpaid_liability",
+      "actual": "51.0",
+      "expected": "51",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "principal_shortage_not_hidden",
+      "actual": "10",
+      "expected": "10",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "missed_principal_carried_forward",
+      "actual": "10",
+      "expected": "10",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "delinquency_blocks_investment",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "delinquency_blocks_optional_goals",
+      "actual": "20",
+      "expected": "20",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "old_and_new_principal_due_paid_once",
+      "actual": "12",
+      "expected": "12",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "delinquency_not_extra_liability",
+      "actual": "-5",
+      "expected": "-5",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "delinquency_settled_next_month",
+      "actual": "0",
+      "expected": "0",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "delinquency_must_be_subset",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "investment_blocked_by_arrears",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "settling_arrears_no_second_expense",
+      "actual": "13",
+      "expected": "13",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "settling_arrears_cleared",
+      "actual": "0",
+      "expected": "0",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "unlevered_below_minus100_rejected",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "shared_cash_goal_A",
+      "actual": "70",
+      "expected": "70",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "shared_cash_goal_B",
+      "actual": "10",
+      "expected": "10",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "cash_floor_respected",
+      "actual": "20",
+      "expected": "20",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "preexisting_reserve_gap_reported",
+      "actual": "5",
+      "expected": "5",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "reserve_gap_blocks_goal_spending",
+      "actual": "0",
+      "expected": "0",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "nonfinite_goal_priority_rejected",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "empty_goal_id_rejected",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "second_goal_shortfall_explicit",
+      "actual": "60",
+      "expected": "60",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "tied_goal_priority_requires_policy",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "duplicate_goal_rejected",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "same_pool_double_earmark_rejected",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "virtual_earmarks_do_not_create_cash",
+      "actual": "10",
+      "expected": "10",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "arrears_block_optional_goals",
+      "actual": "0",
+      "expected": "0",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "pathwise_cash_need_prefix_bound",
+      "actual": "7",
+      "expected": "7",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "positive_flow_cash_need",
+      "actual": "2",
+      "expected": "2",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "effective_rate_round_trip",
+      "actual": "0.119999999999999999999999997",
+      "expected": "0.12",
+      "tolerance": "1E-25",
+      "passed": true
+    },
+    {
+      "name": "effective_rate_is_not_nominal_division",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "common_paths_joint_success",
+      "actual": "0.75",
+      "expected": "0.75",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "independent_probability_product_wrong",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "scenario_shape_guard",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true
+    },
+    {
+      "name": "1000_accounting_invariants_max_residual",
+      "actual": "0",
+      "expected": "0",
+      "tolerance": "0",
+      "passed": true
+    }
+  ],
+  "checks_passed": 46,
+  "all_passed": true,
+  "random_invariant_trials": 1000,
+  "baseline_comparison": {
+    "fixture": "100 cash; floor20; two due goals70 each; no person or demographic",
+    "naive_independent_goal_achievement": [
+      true,
+      true
+    ],
+    "integrated_paid": [
+      70,
+      10
+    ],
+    "integrated_shortfall": [
+      0,
+      60
+    ],
+    "purpose": "demonstrates prevention of double spending, not financial performance"
+  },
+  "limits": [
+    "Not Korean tax, pension or product rule engine",
+    "No automatic insolvency resolution",
+    "No future-return inference",
+    "Single investable balance and explicit month-end convention",
+    "Essential costs mean incurred obligations; unpurchased needs not represented",
+    "No existing-arrears interest or contractual payment-priority model",
+    "No web application or runtime LLM validation"
+  ],
+  "review_correction": {
+    "issue": "Initially missed principal was only logged, so later optional investment was not blocked",
+    "fix": "Carry delinquent_principal as subset of debt, block optional allocations, settle once next month",
+    "distinction": "Incurred unpaid costs are liabilities; unpurchased essential needs are not",
+    "additional_fixes": [
+      "Report pre-existing liquidity gap independently of allocation",
+      "Reject nonfinite or noninteger priority and empty goal id"
+    ]
+  }
+}

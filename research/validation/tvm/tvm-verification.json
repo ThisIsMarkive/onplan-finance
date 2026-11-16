@@ -1,0 +1,155 @@
+{
+  "purpose": "Preliminary code eligibility validation, not a fictional-client calculation",
+  "python": "3.12.14",
+  "repository": "JoelLewis/finance_skills",
+  "commit": "5c498eacf7057e31238c4c5a8012a1afe9ec7c8a",
+  "module": "plugins/core/skills/time-value-of-money/scripts/time_value_of_money.py",
+  "module_sha256": "fef6099e25f517e6848c5a59da990285a2ca10f44765203ab333aa9ac37b2375",
+  "source_self_checks": "Executed --verify and passed before this independent validation",
+  "checks": [
+    {
+      "name": "annuity_pv rate=0 due=False",
+      "actual": 2400000.0,
+      "independent": 2400000.0,
+      "absolute_error": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "annuity_fv rate=0 due=False",
+      "actual": 2400000.0,
+      "independent": 2400000.0,
+      "absolute_error": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "annuity_pv rate=0 due=True",
+      "actual": 2400000.0,
+      "independent": 2400000.0,
+      "absolute_error": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "annuity_fv rate=0 due=True",
+      "actual": 2400000.0,
+      "independent": 2400000.0,
+      "absolute_error": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "annuity_pv rate=0.004 due=False",
+      "actual": 2284050.1481470736,
+      "independent": 2284050.148147072,
+      "absolute_error": 1.3969838619232178e-09,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "annuity_fv rate=0.004 due=False",
+      "actual": 2513707.508428009,
+      "independent": 2513707.5084280083,
+      "absolute_error": 9.313225746154785e-10,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "annuity_pv rate=0.004 due=True",
+      "actual": 2293186.3487396617,
+      "independent": 2293186.3487396603,
+      "absolute_error": 1.3969838619232178e-09,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "annuity_fv rate=0.004 due=True",
+      "actual": 2523762.3384617213,
+      "independent": 2523762.3384617204,
+      "absolute_error": 9.313225746154785e-10,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "annuity_pv rate=-0.001 due=False",
+      "actual": 2430261.764875707,
+      "independent": 2430261.7648757063,
+      "absolute_error": 9.313225746154785e-10,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "annuity_fv rate=-0.001 due=False",
+      "actual": 2372601.341636982,
+      "independent": 2372601.341636975,
+      "absolute_error": 6.984919309616089e-09,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "annuity_pv rate=-0.001 due=True",
+      "actual": 2427831.5031108316,
+      "independent": 2427831.5031108307,
+      "absolute_error": 9.313225746154785e-10,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "annuity_fv rate=-0.001 due=True",
+      "actual": 2370228.740295345,
+      "independent": 2370228.740295338,
+      "absolute_error": 6.984919309616089e-09,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "growing_annuity_pv r=0.03 g=0.03",
+      "actual": 2912621.359223301,
+      "independent": 2912621.359223301,
+      "absolute_error": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "growing_annuity_pv r=0.04 g=0.02",
+      "actual": 2207617.045855147,
+      "independent": 2207617.0458551436,
+      "absolute_error": 3.259629011154175e-09,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "loan_payment_decimal_recurrence_bisection",
+      "actual": 1012451.3816487958,
+      "independent": 1012451.3816488149,
+      "absolute_error": 1.909211277961731e-08,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "loan_discounted_payments_equal_principal",
+      "actual": 99999999.99999812,
+      "independent": 100000000.0,
+      "absolute_error": 1.8775463104248047e-06,
+      "tolerance": 0.001,
+      "passed": true
+    },
+    {
+      "name": "npv_t0_convention",
+      "actual": -1.4210854715202004e-14,
+      "independent": 0.0,
+      "absolute_error": 1.4210854715202004e-14,
+      "tolerance": 1e-10,
+      "passed": true
+    }
+  ],
+  "all_passed": true,
+  "coverage_limits": [
+    "No client simulations",
+    "Not full repository validation",
+    "No Korean tax/pension/product rules",
+    "No irregular-date cash flows",
+    "No performance claims"
+  ]
+}

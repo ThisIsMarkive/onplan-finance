@@ -1,0 +1,14 @@
+{
+  "name": "onplan-finance",
+  "version": "0.1.0",
+  "description": "Evidence-backed household cash-flow planning",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/dev.mjs",
+    "dev:ai": "node scripts/dev.mjs --ai=codex",
+    "test": "node --test tests/*.test.mjs",
+    "validate": "node scripts/validate-artifact.mjs"
+  }
+}

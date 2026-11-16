@@ -1,0 +1,246 @@
+{
+  "scope": "Synthetic two-period normalized consumption-saving calculation only; no customer calibration.",
+  "source": {
+    "package": "econ-ark",
+    "required_version": "0.17.2",
+    "source_tag": "0.17.2",
+    "source_commit": "269085077b84cb50feb49d0cd54bbf4da5fa3199",
+    "url": "http<local-path-redacted>",
+    "license": "Apache-2.0",
+    "installed_model_sha256": "f3ddf8b5b4918a1df5cc9e87df000738f0ac50139725e2dfcac298ad1151b506",
+    "installed_model_git_blob": "1106643c9051d2c43ccd8ed3792d3af0bda28fd1",
+    "expected_git_blob": "1106643c9051d2c43ccd8ed3792d3af0bda28fd1",
+    "installed_license_files": [
+      "econ_ark-0.17.2.dist-info/licenses/LICENSE"
+    ]
+  },
+  "runtime": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.19045-SP0"
+  },
+  "versions": {
+    "econ-ark": "0.17.2",
+    "numpy": "2.5.5",
+    "scipy": "1.18.1",
+    "numba": "0.68.1",
+    "llvmlite": "0.50.0",
+    "pandas": "3.1.1",
+    "sympy": "1.14.0"
+  },
+  "installation_adjustment": {
+    "first_attempt": "econ-ark==0.17.2 installed; pip check passed, but import HARK failed because HARK/simulator.py imports undeclared sympy.",
+    "evidence": "attempt-1-import-failure.json; release requirements/base.txt does not list sympy.",
+    "repair": "Added public sympy package to this isolated venv; full final versions frozen in requirements-lock.txt. No HARK source edited."
+  },
+  "acceptance_thresholds_set_before_execution": {
+    "deterministic_max_abs_error": 1e-08,
+    "constraint_tolerance": 1e-10,
+    "fine_stochastic_max_abs_error": 0.002,
+    "fine_stochastic_max_relative_euler_residual": 0.01
+  },
+  "results": {
+    "deterministic": {
+      "solve_seconds": 0.007041500008199364,
+      "max_absolute_policy_error": 1.7763568394002505e-15,
+      "terminal_consume_all_max_error": 0.0,
+      "reference": "Closed-form two-period CRRA optimum with deterministic income=1 and nonborrowing constraint."
+    },
+    "stochastic_grid_refinement": [
+      {
+        "asset_grid_count": 40,
+        "solve_seconds": 0.00699180003721267,
+        "max_abs_policy_error_vs_independent_root": 4.848308453864192e-05,
+        "mean_abs_policy_error_vs_independent_root": 1.9258897962711777e-05,
+        "max_relative_euler_residual_interior": 0.0001987367812290953,
+        "max_relative_kkt_violation_at_constraint": 0.0,
+        "interior_resource_points": 364,
+        "binding_resource_points": 37,
+        "min_consumption": 0.05,
+        "min_saving": 0.0,
+        "max_budget_residual": 0.0,
+        "all_finite": true
+      },
+      {
+        "asset_grid_count": 120,
+        "solve_seconds": 0.005021899996791035,
+        "max_abs_policy_error_vs_independent_root": 5.3009530344150235e-06,
+        "mean_abs_policy_error_vs_independent_root": 2.0628100497419842e-06,
+        "max_relative_euler_residual_interior": 2.232604105828799e-05,
+        "max_relative_kkt_violation_at_constraint": 0.0,
+        "interior_resource_points": 364,
+        "binding_resource_points": 37,
+        "min_consumption": 0.05,
+        "min_saving": 0.0,
+        "max_budget_residual": 0.0,
+        "all_finite": true
+      },
+      {
+        "asset_grid_count": 360,
+        "solve_seconds": 0.004531299986410886,
+        "max_abs_policy_error_vs_independent_root": 5.748357994050934e-07,
+        "mean_abs_policy_error_vs_independent_root": 2.2917017743611893e-07,
+        "max_relative_euler_residual_interior": 2.388352010827729e-06,
+        "max_relative_kkt_violation_at_constraint": 0.0,
+        "interior_resource_points": 364,
+        "binding_resource_points": 37,
+        "min_consumption": 0.05,
+        "min_saving": 0.0,
+        "max_budget_residual": 0.0,
+        "all_finite": true
+      }
+    ],
+    "actual_forward_simulation": {
+      "simulated_units": 64,
+      "periods": 1,
+      "seed": 20261116,
+      "description": "Synthetic forward-transition integration check; no financial success statistic calculated.",
+      "max_budget_identity_residual": 0.0,
+      "max_resource_identity_residual": 0.0,
+      "max_return_transition_residual": 0.0,
+      "max_policy_application_error": 0.0,
+      "min_actual_saving": 0.02113774561400117,
+      "reinitialize_replay_max_error": 0.0
+    },
+    "policy_comparison_sample": [
+      {
+        "resources": 0.05,
+        "deterministic_closed_form": 0.05,
+        "independent_uncertain_income": 0.05,
+        "hark_fine": 0.05,
+        "extra_saving_with_synthetic_income_risk": 0.0
+      },
+      {
+        "resources": 0.5475,
+        "deterministic_closed_form": 0.5475,
+        "independent_uncertain_income": 0.5475,
+        "hark_fine": 0.5475,
+        "extra_saving_with_synthetic_income_risk": 0.0
+      },
+      {
+        "resources": 1.045,
+        "deterministic_closed_form": 1.0280434824959808,
+        "independent_uncertain_income": 1.0022653067755225,
+        "hark_fine": 1.002264731939723,
+        "extra_saving_with_synthetic_income_risk": 0.025778750556257668
+      },
+      {
+        "resources": 2.5374999999999996,
+        "deterministic_closed_form": 1.785602897558547,
+        "independent_uncertain_income": 1.7704121701229008,
+        "hark_fine": 1.7704119748504152,
+        "extra_saving_with_synthetic_income_risk": 0.015190922708131716
+      },
+      {
+        "resources": 5.0249999999999995,
+        "deterministic_closed_form": 3.0482019226628245,
+        "independent_uncertain_income": 3.039153432467406,
+        "hark_fine": 3.0391531417442463,
+        "extra_saving_with_synthetic_income_risk": 0.009048780918578192
+      },
+      {
+        "resources": 10.0,
+        "deterministic_closed_form": 5.573399972871379,
+        "independent_uncertain_income": 5.568390575775224,
+        "hark_fine": 5.568390290961741,
+        "extra_saving_with_synthetic_income_risk": 0.005009681909638353
+      }
+    ]
+  },
+  "checks": {
+    "installed_model_matches_release_source": true,
+    "deterministic_closed_form": true,
+    "terminal_consume_all": true,
+    "finite_positive_consumption": true,
+    "nonborrowing_constraint": true,
+    "boundary_kkt": true,
+    "fine_grid_independent_policy_comparison": true,
+    "fine_grid_interior_euler": true,
+    "grid_refinement_reduces_max_policy_error": true,
+    "actual_forward_simulation_identities": true,
+    "actual_forward_nonborrowing": true,
+    "fixed_seed_replay": true
+  },
+  "limitations": [
+    "Two periods: one decision period plus consume-all terminal period, not a lifelong plan.",
+    "One risk-free saving asset, no borrowing, no mortality, no bequests, no taxes or product fees.",
+    "All magnitudes normalized by permanent income. A period is an abstract interval, not a specified month/year.",
+    "Income uncertainty is a synthetic seven-point approximation, not measured Korean income risk.",
+    "Independent root benchmark uses the same discretized shocks; does not validate accuracy of continuous-distribution approximation.",
+    "Grid convergence is checked only on the stated resource interval; not a proof for all states/models.",
+    "Passing numerical checks does not validate CRRA/time preferences, Korean law, goal priorities or investment performance.",
+    "This does not execute the full upstream test suite or validate PortfolioConsumerType."
+  ],
+  "fixture_inputs": {
+    "common": {
+      "cycles": 1,
+      "T_cycle": 1,
+      "CRRA": 2.0,
+      "DiscFac": 0.96,
+      "Rfree": [
+        1.02
+      ],
+      "LivPrb": [
+        1.0
+      ],
+      "PermGroFac": [
+        1.0
+      ],
+      "PermShkStd": [
+        0.0
+      ],
+      "PermShkCount": 1,
+      "TranShkCount": 7,
+      "UnempPrb": 0.0,
+      "IncUnemp": 0.0,
+      "UnempPrbRet": 0.0,
+      "IncUnempRet": 0.0,
+      "T_retire": 0,
+      "BoroCnstArt": 0.0,
+      "CubicBool": false,
+      "vFuncBool": false,
+      "aXtraMin": 0.0001,
+      "aXtraMax": 20.0,
+      "aXtraNestFac": 3,
+      "seed": 20261116,
+      "AgentCount": 1,
+      "T_sim": 1
+    },
+    "resource_grid": {
+      "minimum": 0.05,
+      "maximum": 10.0,
+      "count": 401
+    },
+    "stochastic_income_discrete_distribution": {
+      "transitory_income": [
+        0.7173297732424146,
+        0.8356438674325379,
+        0.9108031747555944,
+        0.9804095254805032,
+        1.0554022326121721,
+        1.1507082161943443,
+        1.3497032102824327
+      ],
+      "probabilities": [
+        0.14285714285714285,
+        0.14285714285714285,
+        0.14285714285714285,
+        0.14285714285714285,
+        0.1428571428571428,
+        0.1428571428571429,
+        0.1428571428571429
+      ],
+      "permanent_shocks": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "income_mean": 1.0
+    }
+  },
+  "all_checks_passed": true,
+  "elapsed_seconds_total": 10.306681799993385
+}

@@ -1,0 +1,66 @@
+{
+  "recordedDate": "2026-11-16",
+  "buildVersion": "0.1.0",
+  "modelVersion": "1.0.0",
+  "automated": {
+    "command": "node --test tests/*.test.mjs",
+    "passed": 50,
+    "failed": 0,
+    "coreTests": 18,
+    "serverTestsIncludingSixHTTPSubtests": 18,
+    "pythonIndependentChecks": 24,
+    "ledgerComparisons": 88992,
+    "evidence": [
+      "../fixtures/verification-results.json",
+      "../fixtures/server-verification-results.json",
+      "../fixtures/ai-bridge-tests.json"
+    ],
+    "bridgeTests": 14
+  },
+  "browser": {
+    "environment": "ChatGPT in-app browser, local HTTP preview",
+    "checked": [
+      "Initial 28 input fields are blank, including optional plan label",
+      "Submitting empty form reports 27 required fields",
+      "Explicit import of fictional-household.json populates all required fields",
+      "Normal comparison: extra-debt remaining balance 138982748 KRW at month 87",
+      "Stress comparison: cash strategy education earmark 43566398 KRW at month 87",
+      "Stress chart selector and explanation navigation work",
+      "Input JSON downloads and contains the entered input",
+      "Changed input is flagged as requiring recalculation",
+      "Reset confirmation clears all 28 fields",
+      "Separate all-zero customer calculates without loan or education target",
+      "390px viewport: body does not overflow, wide comparison table scrolls inside its container",
+      "Console error and warning inspection returned no entries",
+      "Latest copy correction confirmed in rendered UI; savings pause limited to stress period",
+      "Actual Codex subscription explanation requested from browser and five generated sections rendered with numeric evidence",
+      "Manual AI brief copied:7910 characters;27 financial fields and three alternatives; labels present only for alternative names"
+    ],
+    "automatedBrowserSuite": false,
+    "limitations": "Manual UI verification in one browser; no full cross-browser or assistive-technology audit."
+  },
+  "liveAI": {
+    "model": "Codex CLI default; actual model ID not emitted",
+    "apiKeyUsed": false,
+    "directRunDurationMs": 29823,
+    "apiFallback": false,
+    "configured": true,
+    "evidence": "live-ai-verification.json",
+    "provider": "codex_subscription",
+    "fix": "One exact startup notice for deliberately disabled Code Mode was originally misclassified as a tool event. That notice alone is now tolerated; actual tool events remain blocked.",
+    "notVerified": [
+      "billing dashboard",
+      "all possible generated narratives",
+      "future account availability"
+    ],
+    "authMode": "chatgpt",
+    "initialAbortedStarts": 3,
+    "successfulRealGenerations": 2,
+    "scope": "Local opt-in mode only"
+  },
+  "publication": {
+    "githubRepository": "https://github.com/ThisIsMarkive/onplan-finance",
+    "sourceUpload": "pending",
+    "siteDeployment": "pending"
+  }
+}

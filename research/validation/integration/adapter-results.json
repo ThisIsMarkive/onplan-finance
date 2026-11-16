@@ -1,0 +1,246 @@
+{
+  "purpose": "Synthetic adapter verification; no customer and no performance estimate",
+  "source_scenario_sha256": "ffbb323079cedcc77325b3e72c87e54bac1df2b4ed305c07dd8464a1ed21c665",
+  "scenarios": 7,
+  "policies": 2,
+  "reconciled_rows": 14,
+  "all_passed": true,
+  "timing": "One synthetic observation per accounting period; no real data frequency claim",
+  "results": [
+    {
+      "policy": "equal_weight",
+      "weights": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "rows": [
+        {
+          "scenario": 0,
+          "portfolio_return": -0.02633333333333333,
+          "goal_paid": [
+            "70",
+            "37.36666666666666700"
+          ],
+          "goal_shortfall": [
+            "0",
+            "2.63333333333333300"
+          ],
+          "all_goals_met": false,
+          "ending_cash": "10.00000000000000000",
+          "reconciliation_residual": "0E-17"
+        },
+        {
+          "scenario": 1,
+          "portfolio_return": -0.0063333333333333314,
+          "goal_paid": [
+            "70",
+            "39.3666666666666668600"
+          ],
+          "goal_shortfall": [
+            "0",
+            "0.6333333333333331400"
+          ],
+          "all_goals_met": false,
+          "ending_cash": "10.0000000000000000000",
+          "reconciliation_residual": "0E-19"
+        },
+        {
+          "scenario": 2,
+          "portfolio_return": -0.01633333333333333,
+          "goal_paid": [
+            "70",
+            "38.36666666666666700"
+          ],
+          "goal_shortfall": [
+            "0",
+            "1.63333333333333300"
+          ],
+          "all_goals_met": false,
+          "ending_cash": "10.00000000000000000",
+          "reconciliation_residual": "0E-17"
+        },
+        {
+          "scenario": 3,
+          "portfolio_return": 0.04366666666666666,
+          "goal_paid": [
+            "70",
+            "40"
+          ],
+          "goal_shortfall": [
+            "0",
+            "0"
+          ],
+          "all_goals_met": true,
+          "ending_cash": "14.36666666666666600",
+          "reconciliation_residual": "0E-17"
+        },
+        {
+          "scenario": 4,
+          "portfolio_return": 0.027,
+          "goal_paid": [
+            "70",
+            "40"
+          ],
+          "goal_shortfall": [
+            "0",
+            "0"
+          ],
+          "all_goals_met": true,
+          "ending_cash": "12.700",
+          "reconciliation_residual": "0.000"
+        },
+        {
+          "scenario": 5,
+          "portfolio_return": 0.017,
+          "goal_paid": [
+            "70",
+            "40"
+          ],
+          "goal_shortfall": [
+            "0",
+            "0"
+          ],
+          "all_goals_met": true,
+          "ending_cash": "11.700",
+          "reconciliation_residual": "0.000"
+        },
+        {
+          "scenario": 6,
+          "portfolio_return": 0.017,
+          "goal_paid": [
+            "70",
+            "40"
+          ],
+          "goal_shortfall": [
+            "0",
+            "0"
+          ],
+          "all_goals_met": true,
+          "ending_cash": "11.700",
+          "reconciliation_residual": "0.000"
+        }
+      ],
+      "joint_achievement_frequency": 0.5714285714285714,
+      "mean_total_shortfall": 0.6999999999999998
+    },
+    {
+      "policy": "sample_CVaR_target",
+      "weights": [
+        0.2094668054834736,
+        0.3351469212991542,
+        0.4553862732173732
+      ],
+      "rows": [
+        {
+          "scenario": 0,
+          "portfolio_return": -0.01127475353283329,
+          "goal_paid": [
+            "70",
+            "38.87252464671667100"
+          ],
+          "goal_shortfall": [
+            "0",
+            "1.12747535328332900"
+          ],
+          "all_goals_met": false,
+          "ending_cash": "10.00000000000000000",
+          "reconciliation_residual": "0E-17"
+        },
+        {
+          "scenario": 1,
+          "portfolio_return": -0.011274756785392932,
+          "goal_paid": [
+            "70",
+            "38.872524321460706800"
+          ],
+          "goal_shortfall": [
+            "0",
+            "1.127475678539293200"
+          ],
+          "all_goals_met": false,
+          "ending_cash": "10.000000000000000000",
+          "reconciliation_residual": "0E-18"
+        },
+        {
+          "scenario": 2,
+          "portfolio_return": -0.01253155631726992,
+          "goal_paid": [
+            "70",
+            "38.74684436827300800"
+          ],
+          "goal_shortfall": [
+            "0",
+            "1.25315563172699200"
+          ],
+          "all_goals_met": false,
+          "ending_cash": "10.00000000000000000",
+          "reconciliation_residual": "0E-17"
+        },
+        {
+          "scenario": 3,
+          "portfolio_return": 0.032713275618696164,
+          "goal_paid": [
+            "70",
+            "40"
+          ],
+          "goal_shortfall": [
+            "0",
+            "0"
+          ],
+          "all_goals_met": true,
+          "ending_cash": "13.271327561869616400",
+          "reconciliation_residual": "0E-18"
+        },
+        {
+          "scenario": 4,
+          "portfolio_return": 0.02098313418636568,
+          "goal_paid": [
+            "70",
+            "40"
+          ],
+          "goal_shortfall": [
+            "0",
+            "0"
+          ],
+          "all_goals_met": true,
+          "ending_cash": "12.09831341863656800",
+          "reconciliation_residual": "0E-17"
+        },
+        {
+          "scenario": 5,
+          "portfolio_return": 0.01218552770554786,
+          "goal_paid": [
+            "70",
+            "40"
+          ],
+          "goal_shortfall": [
+            "0",
+            "0"
+          ],
+          "all_goals_met": true,
+          "ending_cash": "11.21855277055478600",
+          "reconciliation_residual": "0E-17"
+        },
+        {
+          "scenario": 6,
+          "portfolio_return": 0.014699130021861469,
+          "goal_paid": [
+            "70",
+            "40"
+          ],
+          "goal_shortfall": [
+            "0",
+            "0"
+          ],
+          "all_goals_met": true,
+          "ending_cash": "11.469913002186146900",
+          "reconciliation_residual": "0E-18"
+        }
+      ],
+      "joint_achievement_frequency": 0.5714285714285714,
+      "mean_total_shortfall": 0.501158094792802
+    }
+  ],
+  "limits": "Single period and full liquidation fixture; no taxes, fee or multi-period policy tested here"
+}

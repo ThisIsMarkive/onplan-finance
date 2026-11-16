@@ -1,0 +1,23 @@
+{
+  "kind": "Review counterexamples, not customer data or full model validation",
+  "unpaid_principal_then_new_allocation": {
+    "first_month_due_shortfall": "10",
+    "persisted_arrears": "0",
+    "following_month_investment_accepted": "50",
+    "interpretation": "The Balance does not retain due-principal delinquency. A caller must retain and enforce that obligation separately; do not add the same principal as new liability."
+  },
+  "already_below_floor": {
+    "cash": "5",
+    "floor": "10",
+    "goal_paid": "0",
+    "interpretation": "No additional breach is caused, but the function does not report or repair an existing floor breach."
+  },
+  "nonfinite_priority": {
+    "accepted": true,
+    "order": [
+      "A",
+      "B"
+    ],
+    "interpretation": "GoalDue annotation is not runtime validation; NaN priority is accepted despite explicit-priority intent."
+  }
+}

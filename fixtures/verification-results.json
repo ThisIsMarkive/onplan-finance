@@ -1,0 +1,267 @@
+{
+  "status": "passed",
+  "verifiedAtUTC": "2026-11-16T07:29:43.660474+00:00",
+  "scope": "Synthetic deterministic monthly household arithmetic and software invariants only. No real customer performance or investment backtest.",
+  "runtime": {
+    "python": "3.12.14",
+    "node": "v24.22.1",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "dependencies": "Python standard library; Node built-ins; original pinned MIT TVM source retained"
+  },
+  "source": {
+    "coreSHA256": "9d02ddafcb08869211ab029155f0c56312f176bcb983d52adf4eb1de88833540",
+    "tvmSHA256": "fef6099e25f517e6848c5a59da990285a2ca10f44765203ab333aa9ac37b2375",
+    "tvmCommit": "5c498eacf7057e31238c4c5a8012a1afe9ec7c8a",
+    "tvmPath": "plugins/core/skills/time-value-of-money/scripts/time_value_of_money.py",
+    "license": "MIT; JOEL_LICENSE.txt"
+  },
+  "summary": {
+    "passedChecks": 24,
+    "failedChecks": 0,
+    "nodeTestGroups": 18,
+    "independentJournalInvariants": 88992,
+    "maximumJournalDifferenceKRW": 3.1852e-07
+  },
+  "checks": [
+    {
+      "name": "payment_vs_independent_bisection",
+      "passed": true,
+      "detail": {
+        "actual": 1260593.3165470837,
+        "expected": 1260593.316547084,
+        "absoluteDifferenceKRW": 1.7109133110643227e-10,
+        "toleranceKRW": 1e-05
+      }
+    },
+    {
+      "name": "payment_vs_pinned_original_tvm",
+      "passed": true,
+      "detail": {
+        "actual": 1260593.3165470837,
+        "expected": 1260593.3165470832,
+        "absoluteDifferenceKRW": 5e-10,
+        "toleranceKRW": 1e-05
+      }
+    },
+    {
+      "name": "original_tvm_month204_balance",
+      "passed": true,
+      "detail": {
+        "actual": 100326416.35023956,
+        "expected": 100326416.35,
+        "absoluteDifferenceKRW": 0.00023956,
+        "toleranceKRW": 0.0051
+      }
+    },
+    {
+      "name": "source_hash_unchanged",
+      "passed": true,
+      "detail": "Original module bytes retained; MIT license preserved."
+    },
+    {
+      "name": "baseline_closed_form_balance87",
+      "passed": true,
+      "detail": {
+        "actual": 180489702.57916522,
+        "expected": 180489702.57916516,
+        "absoluteDifferenceKRW": 6.806140127504523e-08,
+        "toleranceKRW": 1e-05
+      }
+    },
+    {
+      "name": "baseline_closed_form_total_cash",
+      "passed": true,
+      "detail": {
+        "actual": 120428381.46040396,
+        "expected": 120428381.46040371,
+        "absoluteDifferenceKRW": 2.5678494580625963e-07,
+        "toleranceKRW": 1e-05
+      }
+    },
+    {
+      "name": "baseline_earmark_not_an_added_asset",
+      "passed": true,
+      "detail": {
+        "actual": 465000000.0,
+        "expected": 465000000.0,
+        "absoluteDifferenceKRW": 0.0,
+        "toleranceKRW": 1e-05
+      }
+    },
+    {
+      "name": "baseline_education_87_deposits",
+      "passed": true,
+      "detail": {
+        "actual": 46100000.0,
+        "expected": 46100000.0,
+        "absoluteDifferenceKRW": 0.0,
+        "toleranceKRW": 1e-05
+      }
+    },
+    {
+      "name": "independent_extra_repayment_balance87",
+      "passed": true,
+      "detail": {
+        "actual": 138982748.367983,
+        "expected": 138982748.36798275,
+        "absoluteDifferenceKRW": 2.451606118550542e-07,
+        "toleranceKRW": 1e-05
+      }
+    },
+    {
+      "name": "independent_extra_repayment_total_interest",
+      "passed": true,
+      "detail": {
+        "actual": 94026324.62350567,
+        "expected": 94026324.62350546,
+        "absoluteDifferenceKRW": 2.1396455501244093e-07,
+        "toleranceKRW": 1e-05
+      }
+    },
+    {
+      "name": "independent_linear_fee_total",
+      "passed": true,
+      "detail": {
+        "actual": 12955.036423992462,
+        "expected": 12955.036423992464,
+        "absoluteDifferenceKRW": 9.802832785563829e-13,
+        "toleranceKRW": 1e-05
+      }
+    },
+    {
+      "name": "independent_early_payoff_month",
+      "passed": true,
+      "detail": {
+        "actual": 190,
+        "expected": 190
+      }
+    },
+    {
+      "name": "stress_six_month_cash_from_three_cash_terms",
+      "passed": true,
+      "detail": {
+        "actual": 20336440.100717492,
+        "expected": 20336440.100717496,
+        "absoluteDifferenceKRW": 4.773452013361406e-09,
+        "toleranceKRW": 1e-05
+      }
+    },
+    {
+      "name": "stress_six_month_free_cash",
+      "passed": true,
+      "detail": {
+        "actual": 336440.1007174924,
+        "expected": 336440.10071749677,
+        "absoluteDifferenceKRW": 4.373452013361406e-09,
+        "toleranceKRW": 1e-05
+      }
+    },
+    {
+      "name": "six_pauses_without_floor_have_exact_1_8m_goal_cost",
+      "passed": true,
+      "detail": {
+        "actual": 44300000.0,
+        "expected": 44300000.0,
+        "absoluteDifferenceKRW": 0.0,
+        "toleranceKRW": 1e-05
+      }
+    },
+    {
+      "name": "hand_derived_post_stress_floor_recovery_goal",
+      "passed": true,
+      "detail": {
+        "actual": 43566398.04532287,
+        "expected": 43566398.04532287,
+        "absoluteDifferenceKRW": 3.548053406012633e-09,
+        "toleranceKRW": 1e-05
+      }
+    },
+    {
+      "name": "hand_derived_missed_education",
+      "passed": true,
+      "detail": {
+        "actual": 2533601.9546771282,
+        "expected": 2533601.9546771264,
+        "absoluteDifferenceKRW": 1.7480534060126328e-09,
+        "toleranceKRW": 1e-05
+      }
+    },
+    {
+      "name": "independent_transaction_journal",
+      "passed": true,
+      "detail": {
+        "caseCount": 6,
+        "invariantChecks": 88992,
+        "maximumAbsoluteDifferenceKRW": 3.1852e-07,
+        "toleranceKRW": 1e-05
+      }
+    },
+    {
+      "name": "hand_unpaid_consumption_liability",
+      "passed": true,
+      "detail": {
+        "actual": 100.0,
+        "expected": 100.0,
+        "absoluteDifferenceKRW": 0.0,
+        "toleranceKRW": 1e-05
+      }
+    },
+    {
+      "name": "hand_unpaid_interest_liability",
+      "passed": true,
+      "detail": {
+        "actual": 12.0,
+        "expected": 12.0,
+        "absoluteDifferenceKRW": 0.0,
+        "toleranceKRW": 1e-05
+      }
+    },
+    {
+      "name": "hand_insolvency_net_worth_without_double_count",
+      "passed": true,
+      "detail": {
+        "actual": -1312.0,
+        "expected": -1312.0,
+        "absoluteDifferenceKRW": 0.0,
+        "toleranceKRW": 1e-05
+      }
+    },
+    {
+      "name": "hand_education_reserve_emergency_use",
+      "passed": true,
+      "detail": {
+        "actual": 150.0,
+        "expected": 150.0,
+        "absoluteDifferenceKRW": 0.0,
+        "toleranceKRW": 1e-05
+      }
+    },
+    {
+      "name": "cash_and_education_fixture_total_assets_same",
+      "passed": true,
+      "detail": "Fixture-specific: earmarking alone does not create wealth or demonstrate investment performance."
+    },
+    {
+      "name": "node_tests_exit_success",
+      "passed": true,
+      "detail": " numeric and date field rejects blanks, nulls and absent values (6.7249ms)\n✔ nonfinite, negative, excessive numeric values and invalid dates are rejected (0.5724ms)\n✔ cross-field validation prevents duplicated earmarks, inconsistent zero goals and invalid stress (0.3743ms)\n✔ all-zero customer with explicit fields is valid, has no debt and no invented cash (2.6106ms)\n✔ numeric strings normalize without mutating caller input (18.4937ms)\n✔ zero-rate loan and zero-interest principal transfer preserve wealth (2.858ms)\n✔ fictional baseline matches independent original preliminary arithmetic (17.3393ms)\n✔ cash alternative is exactly baseline and education earmarks cannot create assets (12.8483ms)\n✔ same extra budget includes fee and loans keep scheduled payment until early payoff (15.5333ms)\n✔ stress pauses all elective payments and connects floor recovery to future education (12.8518ms)\n✔ without recovery floor, six missed contributions reduce future education by exactly 1.8 million (11.8685ms)\n✔ mandatory deficits consume earmarks and then record unpaid obligations, not negative hidden cash (2.2198ms)\n✔ arrears are repaid upon income recovery without double-counting principal liabilities (1.4662ms)\n✔ cash floor constrains elective funding but never fabricates cash or prevents mandatory spending (1.1252ms)\n✔ excess requested budget remains capped and warns instead of fabricating funding (17.674ms)\n✔ no stress is exactly normal and stress beyond comparison is labelled (33.3345ms)\n✔ 600-month boundary is supported; nonpositive education scenario has no phantom earmark (23.6822ms)\n✔ seeded heterogeneous customer ledgers obey resource, liability and net-worth invariants (46.6791ms)\nℹ tests 18\nℹ suites 0\nℹ pass 18\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 365.3993\n"
+    }
+  ],
+  "observations": {
+    "baselineMonthlyPayment": 1260593.3165470837,
+    "baselineEducation": 46100000,
+    "stressedEducationWithFloorRecovery": 43566398.04532287,
+    "stressedEducationWithoutFloorRecovery": 44300000,
+    "sixMonthFreeCash": 336440.1007174924,
+    "debtEarlyPayoffMonths": 190,
+    "feeTotalKRW": 12955.036423992462,
+    "cashAlternativeEqualsBaseline": true,
+    "educationEarmarkDoesNotCreateWealth": true
+  },
+  "limits": [
+    "Returns and inflation zero; no tax, bank day count/rounding, actual dated cash timing or legal default outcomes.",
+    "Monetary tolerances apply to tested fixtures, not a universal bank-precision guarantee.",
+    "Long payoff horizon assumes the same income and expenses continue; retirement readiness is not assessed.",
+    "Education target gap measures earmarked cash, not total funding capacity or goal success probability."
+  ]
+}

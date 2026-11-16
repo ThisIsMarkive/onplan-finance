@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0",
+  "date_kst": "2026-11-16",
+  "scope": "Independent adoption/evidence audit; customer unselected. Documentary claims rechecked; numeric model validation is separate. Initial integration-code review and counterexamples included.",
+  "search": {
+    "additional_exa_searches": 1,
+    "requested_results": 3,
+    "prompt": {
+      "query": "Rockafellar Uryasev 2002 Conditional value at risk general loss distributions discrete probability atoms original paper PDF",
+      "objective": "Find exact primary publication and author PDF for discrete empirical CVaR tail-mass convention. Narrow audit followup to 2000 continuity assumption. Do not widen research.",
+      "numResults": 3
+    },
+    "note": "Other audit work used known original URLs; no broad new search. Original workstream source counts remain separate."
+  },
+  "adoption": [
+    {
+      "id": "Campbell2006",
+      "bibliography": "Campbell, John Y. (2006). Household Finance. The Journal of Finance, 61(4), 1553–1604. DOI:10.1111/j.1540-6261.2006.00883.x.",
+      "primary_url": "http<local-path-redacted>",
+      "publication_url": "http<local-path-redacted>",
+      "read_location": "NBER w12149 §I.B Modelling, manuscript pp.6–10; prior full-text read retained.",
+      "recognition": "AFA Presidential Address and Journal of Finance publication. No citation-count ranking claimed.",
+      "exact_claim": "Nontradable labor income, uninsurable background risk, illiquidity, borrowing constraints, inflation and taxes complicate household choice beyond textbook financial-asset portfolios.",
+      "our_adaptation": "Single shared household ledger, explicit liquidity/obligation checks and shared goal resources.",
+      "decision": "Core conceptual framing.",
+      "boundary": "Paper does not supply or validate this ledger's code, state transitions, tax engine, loss function or chosen policy priorities. Original ledger code must be attributed to this project, informed by the paper."
+    },
+    {
+      "id": "BPT2000",
+      "bibliography": "Shefrin, Hersh, and Meir Statman (2000). Behavioral Portfolio Theory. Journal of Financial and Quantitative Analysis, 35(2), 127–151. DOI:10.2307/2676187.",
+      "primary_url": "http<local-path-redacted>",
+      "read_copy": "htt<local-path-redacted>",
+      "copy_status": "Original published article text on a third-party mirror; verified against official publisher title/authors/journal. Do not label mirror author-hosted.",
+      "read_location": "Introduction and §VIII, published pp.141–142; §XII conclusion.",
+      "recognition": "Official Cambridge page labels it JFQA William F. Sharpe Best Paper Award Winner. No unverified citation counts used.",
+      "exact_claim": "Positive behavioral theory of aspiration layers. Multiple-account version overlooks covariances across mental accounts; probability weighting/lottery-like choices describe behavior.",
+      "our_adaptation": "Goal descriptions and priority elicitation; present goals intelligibly but evaluate shared finances jointly.",
+      "decision": "Supporting explanatory basis, not optimizer or normative prescription.",
+      "boundary": "Do not adopt ignored covariance, distorted probabilities or lottery-type risk seeking as recommended policy. Publisher online date 2009 is not publication year 2000; publisher abstract has duplicated BPT-SA typo, original distinguishes BPT-SA/BPT-MA. Omit previous snapshot citation count unless its exact index/time evidence is preserved."
+    },
+    {
+      "id": "DMSS2010",
+      "bibliography": "Das, Sanjiv; Harry Markowitz; Jonathan Scheid; Meir Statman (2010). Portfolio Optimization with Mental Accounts. Journal of Financial and Quantitative Analysis, 45(2), 311–334. DOI:10.1017/S0022109010000141.",
+      "primary_url": "http<local-path-redacted>",
+      "read_location": "§I, pp.314–316; §III starting pp.318–319; §V constrained aggregation; §VI conclusion.",
+      "recognition": "Peer-reviewed JFQA publication and explicit downstream relation to Das et al.2020. No citation count or general superiority claim.",
+      "exact_claim": "Mental-account threshold return H and maximum failure probability alpha connect to mean-variance optimization under stated distribution/utility conditions. Aggregate mean-variance efficiency result relies on short selling; constraints can create losses.",
+      "our_adaptation": "Explicit goal amount/date/minimum/adjustability and joint resource checks; financial-subportfolio alternatives evaluated through household ledger.",
+      "decision": "Core goal specification/translation; numeric mapping only if assumptions are actually implemented and tested.",
+      "boundary": "This is not a proof that arbitrary multiple-goal household planning with taxes/debt/long-only restrictions is globally efficient. The normal probability mapping is not distribution-free. Do not call it Management Science."
+    },
+    {
+      "id": "RU2000",
+      "bibliography": "Rockafellar, R. Tyrrell, and Stanislav Uryasev (2000). Optimization of Conditional Value-at-Risk. Journal of Risk, 2, 21–41. DOI:10.21314/JOR.2000.038.",
+      "primary_url": "http<local-path-redacted>",
+      "publisher_url": "http<local-path-redacted>",
+      "version": "Read author manuscript dated 1999-09-05, not mislabeled as a 1999 journal publication.",
+      "read_location": "§2 equations(1)–(10), Theorems1–2; §3 portfolio example.",
+      "recognition": "Original optimization formulation in Journal of Risk; later general-distribution extension directly builds on it. No citation ranking.",
+      "exact_claim": "CVaR can be minimized through auxiliary threshold plus scaled expected excess loss. Joint convexity requires a convex loss in decisions and convex feasible set. Original basic derivation assumes continuous loss distributions.",
+      "our_adaptation": "Tail-loss diagnostic and asset-allocation subproblem, with loss units/horizon and scenarios explicitly stated.",
+      "decision": "Core risk-calculation basis; portfolio optimizer remains a subordinate component.",
+      "boundary": "Portfolio return CVaR is not household goal-shortfall risk. Replacing loss with household shortfall is our modeling choice. Tax thresholds/discrete decisions can destroy convexity; no global household optimality follows."
+    },
+    {
+      "id": "RU2002",
+      "bibliography": "Rockafellar, R. Tyrrell, and Stanislav Uryasev (2002). Conditional Value-at-Risk for General Loss Distributions. Journal of Banking & Finance, 26(7), 1443–1471.",
+      "primary_url": "http<local-path-redacted>",
+      "version": "Read author version dated 2001-11-28; journal year2002 from bibliographic metadata. DOI resolver unavailable, so not needed for supported primary link.",
+      "read_location": "Definition3/equations(7)–(8), discussion of atom splitting; Theorem10/equation(28).",
+      "exact_claim": "General/discrete distributions require correct tail distribution and possibly fractional mass at VaR; same minimization formula holds with integrable losses.",
+      "our_adaptation": "Independent empirical CVaR tests for ties, mass at zero, fractional tail size and weighted scenarios.",
+      "decision": "Required narrow technical companion when validating finite sample CVaR.",
+      "boundary": "Mean(loss>=VaR) or mean(loss>VaR) is not generally empirical CVaR. Scenario weights are model assumptions; stress scenarios without probabilities do not create real likelihoods."
+    },
+    {
+      "id": "Carroll",
+      "bibliography": "Carroll, Christopher D. (1997). Buffer-Stock Saving and the Life Cycle/Permanent Income Hypothesis. The Quarterly Journal of Economics,112(1),1–55. DOI:10.1162/003355397555109.",
+      "primary_url": "http<local-path-redacted>",
+      "related_read_manuscript": "http<local-path-redacted>",
+      "recognition": "1997 QJE publication metadata rechecked. Later theoretical manuscript/code is a different work/version.",
+      "exact_claim": "Income uncertainty and impatience can produce buffer-stock behavior under conditions; later model conditions determine whether target wealth exists.",
+      "our_adaptation": "Optional consumption-saving sensitivity module and explanation of precautionary liquidity demand.",
+      "decision": "Conditional, not required for core ledger/goal comparison.",
+      "boundary": "1997 full text not newly read in this audit; later manuscript read in earlier stream must not be passed off as 1997 full-text validation. No universal emergency-fund months or calibrated Korean optimum from default HARK parameters. Do not assert journal acceptance of later foundations manuscript without evidence."
+    },
+    {
+      "id": "DP2020",
+      "bibliography": "Das, Sanjiv R.; Daniel Ostrov; Anand Radhakrishnan; Deep Srivastav (2020). Dynamic portfolio allocation in goals-based wealth management. Computational Management Science,17,613–640. DOI:10.1007/s10287-019-00351-7.",
+      "primary_url": "http<local-path-redacted>",
+      "read_location": "§2.1 fixed cashflows; §2.3 state grid and GBM; §3.2 bankruptcy; §3.3 multiple weighted goals; §4.2 grid checks; §5 conclusion.",
+      "recognition": "Peer-reviewed journal article, online2019/volume2020 distinction. No universal outperformance extrapolation.",
+      "exact_claim": "DP chooses among allowable portfolios to maximize a terminal goal probability under its model, with cash infusions/withdrawals fixed at time0. Multiple weighted terminal thresholds yield a value function that is no longer a single goal-attainment probability.",
+      "our_adaptation": "Optional state-contingent policy candidate generator, independently evaluated in common household paths.",
+      "decision": "Conditional extension after simpler policies are validated; not core completion requirement.",
+      "boundary": "Precommitted C(t) does not solve endogenous income/spending choice. Same-horizon weighted thresholds are not arbitrary multiple-date household goals. Original examples and GBM/Markov/grid assumptions do not establish Korean empirical superiority."
+    }
+  ],
+  "contest": {
+    "blog_url": "http<local-path-redacted>",
+    "blog_read": "Full retrieved text through stage6 rechecked; final summary image not independently read.",
+    "blog_stages": [
+      "고객과의 관계 정립",
+      "고객 정보 수집 및 목표 설정",
+      "고객 상황 분석 및 평가",
+      "재무설계 제안서 작성 및 제시",
+      "재무설계 제안서 실행 지원",
+      "실행 경과 및 고객 상황의 모니터링"
+    ],
+    "template_stages": [
+      "고객과의 관계 정립",
+      "재무목표 설정 및 고객에 관한 자료수집",
+      "고객의 재무상태 분석 및 평가",
+      "재무설계안 수립 및 제시",
+      "재무설계안 실행",
+      "재무설계안 점검"
+    ],
+    "stage_difference": "Labels vary between explanatory blog and submission template but substantive sequence consistent. Use template labels in eventual submission; blog elaborates content. CFP Board seven-step standard supports quality only.",
+    "requirements_verified_in_local_text": [
+      "본문 A4 7–14쪽, 범위외 감점",
+      "부록 A4 3–10쪽 별도 산정, 부록 미제출 심사제외",
+      "본문 식별정보 심사제외",
+      "각주와 현행 법·세법·규정",
+      "실제 도구·버전·주요 프롬프트·참가자 판단·검증",
+      "오류를 못 찾으면 검증방법과 그 사실을 기록"
+    ],
+    "provenance_warning": "40% 표·그림 제한은 user-reported 담당자 안내; DOCX 본문에서 재확인한 공식 문구로 둔갑시키지 않음.",
+    "official_url": "http<local-path-redacted>",
+    "faq_url": "http<local-path-redacted>",
+    "official_rechecked": "본문+부록 한 DOCX/HWP, 별도 동의서 PDF/JPG/PNG, 도구ZIP/링크 선택제출, AI활용평가 반영. 고정 추가점수 또는 실행시LLM 필수 규정 확인되지 않음."
+  },
+  "ai_and_originality": {
+    "recommended_description": "AI의 도움을 받아 개발하고 검증한 연구 기반 재무 의사결정 지원 프로토타입. 실행시 AI 기능은 구현·검증한 범위만 별도 설명.",
+    "development_ai": "자료조사·설계·코드·테스트에 AI를 실제 사용한 프롬프트/수정/기각/검증을 부록에 기록.",
+    "runtime_llm": "실시간 모델 호출, 사전생성 설명 재생, deterministic 계산을 각각 표시. 라이브LLM이 없으면 있다고 표현하지 않음. API키 없는 계산기 모드 자체를 AI모델 추론으로 부르지 않음.",
+    "novelty": "새 금융이론/최초 알고리즘 발명 주장 없음. 원저작물+신규 원장·제약·비교·감사흐름·웹표현을 구분. 국내 규칙은 실제 구현·검증 전까지 반영예정으로 표기.",
+    "risk": "합법적 오픈소스 재사용과 대회 창작물 요건 충족은 같은 판단이 아님. 기존코드 범위·새로운 기여·LICENSE/NOTICE·변경표시를 구체화하되 자동수상자격 보장 주장 금지.",
+    "participant_agency": "AI의 채택 제안과 참가자가 실제 승인·수정·기각한 결정을 구분; 아직 미선택 고객을 선택했다고 기록하지 않음."
+  },
+  "validation_critique": [
+    "학술출판·수상·stars/forks는 신뢰·확산의 근거이며 구현 정확성/가계적합성/성과 검증이 아니다.",
+    "35/42 checks +1000 invariant trials는 해당 fixture의 계산정합성 근거; 법령완성·분포추정·실제 목표달성·웹UX·liveLLM 검증은 별개.",
+    "상태·시간단위·세후/명목·수익발생/입출금 순서·목표 우선순위를 공개하고 같은 시작상태/충격을 재사용.",
+    "현금액을 목표마다 재사용하는 잘못된 기준안은 이중사용 방지 설명용. 이를 기존 전문 재무설계 관행보다 투자성과가 우월하다는 증거로 쓰지 않음.",
+    "목표하회확률 alpha(예:5%)와 CVaR 신뢰수준 beta(예:95%)를 같은 risk_level 값으로 무분별하게 공유하지 않기.",
+    "가계손실함수의 정의와 시나리오 확률/가중치가 정해지기 전 CVaR를 최적정책 근거로 단정하지 않기."
+  ],
+  "initial_code_review": {
+    "status": "Root revised code inspected. Independent narrow execution verifies delinquency carry/block/cure and partial old+new due without double liability; nonfinite priority now rejected. Root reports and final results record 46 checks plus 1000 invariant trials pass; reviewer did not rerun the full suite. liquidity_gap added as separate diagnostic. Original issues below are historical findings, not current unresolved defects.",
+    "followup_file": "research/validation/evidence/code-review-followup.json",
+    "principal_fix_verified": true,
+    "counterexample_file": "research/validation/evidence/code-review-fixtures.json",
+    "issues": [
+      "Original kernel lost scheduled-principal delinquency after audit return; subsequent investing permitted. Principal due is a subset of existing debt, not a new extra liability.",
+      "essential_cost always accrued as liability when unpaid. Must mean an incurred obligation; unpurchased unmet essential needs require a separate metric.",
+      "Already-below-floor starting balance is preserved without an explicit floor-breach diagnostic.",
+      "Nonfinite priority NaN passed GoalDue despite int annotation; needs runtime validation if treated as external input."
+    ],
+    "what_looks_sound": "Internal transfer conservation, liquidation fee once, principal payment cancels cash/debt once, aspirational goal spending reduces shared cash once, joint scenario flag frequency versus independent probability product.",
+    "limits": "Reviewer did not modify root implementation. Own executable initial counterexamples and narrow followup regression only, no customer. Incurred obligations remain distinct from unpurchased unmet needs; the latter is not implemented."
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "recordedAtUTC": "2026-11-16T07:21:44.1740847+00:00",
+  "command": "node --test tests/ai-bridge.test.mjs",
+  "tests": 14,
+  "passed": 14,
+  "failed": 0,
+  "durationMs": 804.5833,
+  "nodeVersion": "v24.22.1",
+  "installedCLIVersionReadOnly": "codex-cli 0.167.0-alpha.4.1",
+  "verificationScope": "Codex runner mocked for authentication and generation; real Node child only for UTF-8/output-limit/timeout. No real subscription quota consumed by these tests.",
+  "bridgeSHA256": "1c55e1819fe5375b763569365e9d8b083ab06c74040000b2108ade79ade27c19",
+  "explanationSHA256": "10a1646a8e420f3d3e58e6582c50d58d9dcf8b1db323f908751ac0a7ab7aa645",
+  "testSHA256": "6900e787b4705beba37769f87145b40d3ce915026e822c0e6740f460ef7dee4d",
+  "boundary": [
+    "Local opt-in only; hosted worker remains unavailable",
+    "ChatGPT login required before each generation; API mode refused",
+    "API keys and alternate authentication environment removed; no auth.json access in application",
+    "Fixed server-recomputed evidence; labels and client prompts excluded",
+    "Read-only sandbox, ephemeral session, no user config, tool features disabled",
+    "Unexpected tool events abort; one exact deliberately-disabled-Code-Mode startup notice allowed",
+    "One generation at a time,120-second child timeout,262144-byte combined output bound",
+    "Numeric placeholders and reference/schema validation before substitution",
+    "No invented model ID; stream model ID used only when actually supplied"
+  ],
+  "documentation": [
+    "https://learn.chatgpt.com/docs/non-interactive-mode",
+    "https://learn.chatgpt.com/docs/app-server",
+    "https://learn.chatgpt.com/docs/config-file/config-reference"
+  ],
+  "realGenerationEvidence": "Tracked separately by root live verification; this file makes no live-generation or financial-performance claim."
+}

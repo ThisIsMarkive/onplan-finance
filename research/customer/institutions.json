@@ -1,0 +1,255 @@
+{
+  "as_of": "2026-11-16",
+  "task": "40대 주택보유 맞벌이 부부와 초등학생 1명 가상고객 기초진단에 필요한 최소 한국 제도",
+  "scope": "고객 금액 확정·상품 추천 이전의 계산 및 분류 규칙",
+  "ai_research_log": {
+    "tool": "Exa web_search_exa + web_fetch_exa",
+    "queries": [
+      {
+        "query": "국민연금공단 노령연금 1969년생 이후 65세 가입기간 10년 지급개시연령",
+        "objective": "국민연금공단 공식 현행 안내에서 1980년대 출생자의 정상 노령연금 개시연령과 최소 가입기간 확인. 조기/연기 수령 추천은 제외.",
+        "numResults": 5
+      },
+      {
+        "query": "금융감독원 연금저축 IRP 중도인출 차이 법정사유 55세 5년 2026",
+        "objective": "금융감독원·국세청·국가법령정보센터 1차 자료에서 연금저축과 IRP의 인출제약 구별. 가계 기초 유동성 진단에 필요한 사실만 확인.",
+        "numResults": 5
+      },
+      {
+        "query": "원리금균등상환 매월 상환금액 계산식 은행 대출 계산기 원금 금리 기간",
+        "objective": "공식 은행/금융기관 상환계산 안내에서 원리금균등상환의 의미와 계산가정 확인. 실제 시장금리는 찾지 않고 가상 계약조건으로 분리.",
+        "numResults": 5
+      },
+      {
+        "query": "site:nts.go.kr 연금수령 55세 5년 가입일 이연퇴직소득 중도인출 연금저축",
+        "objective": "국세청 공식 현행 연금소득 설명에서 만55세·가입5년 및 이연퇴직소득 예외를 확인. 세액공제 상품추천은 제외.",
+        "numResults": 5
+      },
+      {
+        "query": "site:fsc.go.kr 2026 중도상환수수료 1월 신규 계약 매년 공시",
+        "objective": "2025개편 이후 2026 안내에서 개별 계약·적용연도 차이를 확인. 상품의 현재 시장금리를 추정하지 않음.",
+        "numResults": 5
+      },
+      {
+        "query": "site:fss.or.kr IRP 연금저축 중도인출 제약없이 금융꿀팁 125",
+        "objective": "금융감독원 원문에서 연금저축과 IRP 중도인출 차이를 확인. KDI 정책자료 재게시본만 나오면 발행기관과 날짜를 구분.",
+        "numResults": 5
+      },
+      {
+        "query": "소득세법 시행령 제40조의2 2026 55세 5년 연금수령 국가법령정보센터",
+        "objective": "국가법령정보센터 현행 조문 제40조의2의 시행일과 연금수령 나이·기간 요건을 확인. 세율 추천이나 입법예고는 제외.",
+        "numResults": 5
+      }
+    ],
+    "search_calls": 7,
+    "requested_numResults_total": 35,
+    "count_note": "요청 검색결과 수 합계이며 실제 검증한 독립 출처 수가 아니다. 검색 하이라이트에서 선택한 공식 원문과 현행 법령 본문을 확인했다.",
+    "validation_boundary": "제도·조문·공식 안내만 확인했으며 실제 고객 계약, 계좌명세서, 향후 개정, 은행 실시간 견적은 확인하지 않았다."
+  },
+  "facts": [
+    {
+      "id": "mortgage_payment",
+      "fact": "원리금균등상환은 원금과 이자를 합한 상환액을 매월 일정하게 내는 방식이다.",
+      "source_ids": [],
+      "application": "월 현금흐름에는 원금+이자를 모두 유출로 반영하고, 순자산 계산에서는 원금상환만큼 대출잔액을 줄인다.",
+      "calculation_assumption": {
+        "formula": "M=P*i/(1-(1+i)^(-n)); i=0이면 M=P/n",
+        "definitions": {
+          "P": "계산 시작시점 대출잔액",
+          "i": "가상 계약의 연 명목금리 / 12",
+          "n": "남은 월 상환횟수"
+        },
+        "recurrence": "이자_t=전월잔액*i; 원금_t=M-이자_t; 잔액_t=전월잔액-원금_t",
+        "conditions": "금리가 일정하고 거치기간이 없는 월 단위 기준. 실제 은행의 일수계산·원단위 처리·금리 재산정·마지막 납입액은 계약에 따른다.",
+        "source_boundary": "은행 공식 페이지는 상환방식 정의를 뒷받침한다. 위 공식은 독립 금융수학 모형이며 공식 페이지에서 추출한 계산식이 아니다."
+      },
+      "required_inputs": [
+        "대출잔액",
+        "연 명목금리(실제 시장금리와 구분한 가상 계약조건)",
+        "잔여기간",
+        "고정/변동 및 다음 금리 재산정일",
+        "거치기간 유무"
+      ],
+      "do_not_infer": [
+        "현재 은행 시장금리",
+        "법정 DSR 적격 여부"
+      ],
+      "source_boundary": "Repayment definition and formula are a mathematical convention of this example; no bank contract or quote is asserted."
+    },
+    {
+      "id": "prepayment_fee",
+      "fact": "2025-01-13부터 체결하는 신규 대출에 실비용 범위의 중도상환수수료 개편이 적용되며, 이전 계약에 자동 소급하지 않는다. 갱신도 주요 조건이 같아 사실상 동일한 계약이면 개편 대상에서 제외될 수 있다.",
+      "source_ids": [
+        "prepayment_2025",
+        "prepayment_qa"
+      ],
+      "application": "기초진단에서는 추가상환 시 수수료가 발생할 수 있다는 입력 항목만 둔다. 2025년 평균 수수료율이나 2026년 신규 계약 공시를 기존 가상 계약에 자동 대입하지 않는다.",
+      "details": "금융위 안내상 금소법은 중도상환수수료를 원칙적으로 금지하되 대출일로부터 3년 이내 상환 등 예외를 허용한다. 공시 수수료는 연도별·회사별로 달라 계약서 확인이 우선이다.",
+      "required_inputs": [
+        "대출 실행일/갱신일",
+        "계약 수수료율과 계산식",
+        "면제기간·면제한도",
+        "상환 예정일"
+      ],
+      "do_not_infer": [
+        "추가상환 수수료가 반드시 0이라는 결론",
+        "대출 갈아타기 또는 추가상환 추천"
+      ]
+    },
+    {
+      "id": "nps_normal_age",
+      "fact": "현행 정상 노령연금은 가입기간 10년 이상이 기본 요건이고 1969년 이후 출생자의 수급개시연령은 65세다. 따라서 1980년대 출생 가상 부부의 기준 개시연령은 각각 65세다.",
+      "source_ids": [
+        "nps_age"
+      ],
+      "application": "은퇴 현금흐름에서 국민연금의 개시시점을 65세로 구분한다. 예상 수령액은 각자의 가입·소득 이력 없이 임의로 확정하지 않는다.",
+      "required_inputs": [
+        "생년월일",
+        "개인별 가입기간/예상연금 조회값"
+      ],
+      "do_not_infer": [
+        "조기 또는 연기 수령 추천",
+        "평균 연금액을 본인 수령액으로 대입"
+      ]
+    },
+    {
+      "id": "tax_qualified_pension_receipt",
+      "fact": "소득세법 시행령상 일반적인 연금수령은 55세 이후 개시 신청, 가입일부터 5년 경과, 연금수령한도 이내 인출 등 요건을 충족해야 한다. 이연퇴직소득이 계좌에 있으면 5년 요건의 예외가 있다.",
+      "source_ids": [
+        "pension_tax_law",
+        "nts_pension"
+      ],
+      "application": "55세 전 계좌잔액을 세제상 정상 연금수령과 같은 조건의 생활비 재원으로 가정하지 않는다. 이 규정은 세법상 수령 분류이므로 55세 전 인출 자체가 절대 금지된다는 뜻이 아니다.",
+      "required_inputs": [
+        "계좌 종류",
+        "가입일",
+        "세액공제 받은 납입금/공제 받지 않은 납입금/이연퇴직소득/운용수익 구분"
+      ],
+      "do_not_infer": [
+        "계좌잔액 전부에 동일 세율 적용",
+        "이번 단계에서 연금 세액공제 납입 추천"
+      ]
+    },
+    {
+      "id": "pension_savings_liquidity",
+      "fact": "연금저축의 중도해지·일부 인출은 자금 구성과 사유에 따라 세금이 발생할 수 있고, 연금저축보험은 상품에 따라 일부 인출이 허용되지 않아 해지가 필요할 수 있다.",
+      "source_ids": [
+        "fss_pension_saving",
+        "nts_pension"
+      ],
+      "application": "'개인연금'이라고만 쓰지 않고 연금저축펀드·연금저축보험·IRP 등 실제 계좌 종류를 명시한다. 기본 진단에서는 연금저축 평가액을 예금과 같은 즉시 가용 비상자금으로 합산하지 않고 별도 노후자산으로 표시한다.",
+      "required_inputs": [
+        "상품/계좌 종류",
+        "중도인출 약관",
+        "해지환급금/평가액 차이",
+        "납입금의 과세 이력"
+      ],
+      "do_not_infer": [
+        "모든 연금저축은 아무 제약 없이 일부 인출 가능",
+        "비세제적격 연금보험에도 연금저축 규칙이 동일 적용"
+      ]
+    },
+    {
+      "id": "irp_liquidity",
+      "fact": "IRP의 일부 중도인출은 근로자퇴직급여 보장법 시행령에 열거된 사유로 제한된다. 주택구입 사유는 무주택자가 본인 명의로 주택을 구입하는 경우이므로 현재 주택보유 설정에 자동 적용할 수 없다.",
+      "source_ids": [
+        "irp_law",
+        "fss_retirement"
+      ],
+      "application": "IRP 평가액을 즉시 비상자금에서 제외하고 노후자산으로 분리한다. 일부 중도인출과 계좌 전체의 중도해지를 혼동하지 않으며, 실제 사용 필요가 생기면 법정사유·세금·약관을 별도로 확인한다.",
+      "required_inputs": [
+        "IRP/DC/DB 구분",
+        "인출 필요사유",
+        "전체 해지인지 일부 인출인지"
+      ],
+      "do_not_infer": [
+        "어떤 경우에도 55세 전에 해지 불가능",
+        "유주택자도 주택구입 사유로 자유롭게 인출 가능"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "prepayment_2025",
+      "title": "1월 13일(월) 신규 대출부터 중도상환수수료율이 인하됩니다",
+      "url": "http<local-path-redacted>",
+      "publisher": "금융위원회",
+      "publication_date": "2025-01-09",
+      "effective_date": "2025-01-13",
+      "verified": "공식 보도자료 본문 확인"
+    },
+    {
+      "id": "prepayment_qa",
+      "title": "중도상환수수료 개편 관련 Q&A",
+      "url": "http<local-path-redacted>",
+      "publisher": "금융위원회",
+      "publication_date": "2025-01-09",
+      "effective_date": "2025-01-13",
+      "verified": "공식 Q&A 확인"
+    },
+    {
+      "id": "nps_age",
+      "title": "노령연금",
+      "url": "http<local-path-redacted>",
+      "publisher": "국민연금공단",
+      "publication_date": null,
+      "effective_date": "현행 안내, 2026-11-16 조회",
+      "verified": "정상 노령연금 수급개시연령 표와 가입기간 확인"
+    },
+    {
+      "id": "pension_tax_law",
+      "title": "소득세법 시행령 제40조의2",
+      "url": "http<local-path-redacted>",
+      "publisher": "국가법령정보센터",
+      "publication_date": "2026-09-30",
+      "effective_date": "2026-10-01",
+      "verified": "대통령령 제36737호 현행 조문 전체 읽음. 조문 전체 시행일과 해당 요건의 신설일을 혼동하지 않음"
+    },
+    {
+      "id": "nts_pension",
+      "title": "연금소득",
+      "url": "http<local-path-redacted>",
+      "publisher": "국세청",
+      "publication_date": null,
+      "effective_date": "현행 안내, 2026-11-16 조회",
+      "verified": "연금수령 요건과 계좌 분류 본문 확인"
+    },
+    {
+      "id": "fss_pension_saving",
+      "title": "연금저축 유지 및 해지",
+      "url": "http<local-path-redacted>",
+      "publisher": "금융감독원",
+      "publication_date": null,
+      "effective_date": "현행 안내, 2026-11-16 조회",
+      "verified": "중도해지·일부 인출의 과세 및 연금저축보험 상품별 제한 확인"
+    },
+    {
+      "id": "irp_law",
+      "title": "근로자퇴직급여 보장법 시행령 제18조",
+      "url": "http<local-path-redacted>",
+      "publisher": "국가법령정보센터",
+      "publication_date": "2026-03-24",
+      "effective_date": "2026-03-24",
+      "verified": "대통령령 제36220호 제18조 중도인출 허용 사유 인용 구조 확인"
+    },
+    {
+      "id": "fss_retirement",
+      "title": "퇴직연금 중도인출",
+      "url": "http<local-path-redacted>",
+      "publisher": "금융감독원",
+      "publication_date": null,
+      "effective_date": "현행 안내, 2026-11-16 조회",
+      "verified": "주택구입의 무주택 요건 등 공식 안내 확인"
+    }
+  ],
+  "excluded_from_this_stage": [
+    "실제 시장 주담대 금리의 가상 계약 대입",
+    "갈아타기·주택매수·추가상환 추천",
+    "연금 세액공제 추천 및 세금 최적화",
+    "세후 월급의 세전 역산 및 급여 세금 계산",
+    "법정 DSR 적격 판정",
+    "국민연금 예상액 임의 확정",
+    "연금 계좌평가액 전부를 비상현금으로 처리"
+  ],
+  "model_note": "고객의 숫자는 parent가 별도로 확정한다. 이 파일에는 고객 금액이나 최적 행동을 설정하지 않았다."
+}

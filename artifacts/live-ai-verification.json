@@ -1,0 +1,357 @@
+{
+  "verifiedAtUTC": "2026-11-16T07:20:46.175Z",
+  "syntheticCustomer": true,
+  "mocked": false,
+  "status": "passed",
+  "durationMs": 29823,
+  "authMode": "chatgpt",
+  "provider": "codex_subscription",
+  "model": "Codex CLI 기본 모델",
+  "inputHash": "4c00d172d1c05b4d7601fdf8180e48855513bc480ee3f1f4a02db07873c423b5",
+  "events": [
+    {
+      "eventType": "thread.started"
+    },
+    {
+      "eventType": "item.completed",
+      "itemType": "error",
+      "diagnosticMessage": "Code Mode is unavailable because code-mode host is disabled. Code mode will fail closed; enable `features.code_mode_host` and install `codex-code-mode-host`."
+    },
+    {
+      "eventType": "turn.started"
+    },
+    {
+      "eventType": "item.completed",
+      "itemType": "agent_message"
+    },
+    {
+      "eventType": "turn.completed"
+    }
+  ],
+  "result": {
+    "mode": "live_ai",
+    "sections": [
+      {
+        "title": "비교의 기준",
+        "text": "현금 유지안은 기준안과 동일합니다. 기준 월 원리금은 1,260,593원, 기존 납입 후 미배정 월예산은 439,407원이며, 대안에는 동일한 추가 월예산 400,000원를 적용합니다. 비교 기간은 87개월, 비교 기준월은 2034-02입니다.",
+        "evidenceIds": [
+          "E1",
+          "E3",
+          "E4",
+          "E6",
+          "E5"
+        ]
+      },
+      {
+        "title": "현금 유지와 교육배정의 차이",
+        "text": "정상 현금안의 총예금 120,428,381원에는 비배정예금 74,328,381원과 교육배정금 46,100,000원이 포함됩니다. 정상 교육안은 교육배정금 60,000,000원으로 희망 배정목표 60,000,000원를 채우지만, 총예금은 120,428,381원입니다. 교육배정은 예금 내부 표시이므로 그 자체로 순자산을 늘리지 않습니다. 정상 기준월 순자산은 현금안 655,838,679원, 교육안 655,838,679원입니다. 교육 목적의 배정을 늘리는 선택은 자유롭게 사용할 비배정예금과의 교환관계를 가집니다.",
+        "evidenceIds": [
+          "E7",
+          "E8",
+          "E9",
+          "E16",
+          "E18",
+          "E17",
+          "E29",
+          "E31"
+        ]
+      },
+      {
+        "title": "추가상환의 효과와 교환관계",
+        "text": "정상 기준월 대출잔액은 현금안 180,489,703원, 추가상환안 138,982,748원입니다. 누적 발생이자는 현금안 70,161,321원, 추가상환안 63,441,412원이며, 추가상환안의 누적 수수료는 12,955원입니다. 기준월까지 이자 차이에서 수수료를 뺀 값은 6,706,954원, 추가상환안 순자산은 662,545,633원입니다. 추가상환은 기존 월 원리금을 유지하면서 만기를 줄이는 방식입니다. 예금으로 보유할 자금을 상환에 쓰므로 부채와 이자 부담을 줄이는 효과를 현금 보유 여력과 함께 판단해야 합니다.",
+        "evidenceIds": [
+          "E10",
+          "E11",
+          "E12",
+          "E13",
+          "E14",
+          "E15",
+          "E30"
+        ]
+      },
+      {
+        "title": "스트레스와 미래 교육 준비",
+        "text": "입력 소득중단 기간 6개월을 반영한 스트레스 현금안의 최저 비배정예금은 336,440원로, 입력 현금하한 5,000,000원보다 낮습니다. 최대 월 의무미납액은 현금안 0원, 추가상환안 0원, 교육안 0원로 의무미납은 발생하지 않았습니다. 현금하한 미달은 의무미납과 구별해야 합니다. 스트레스 현금안에서 의무지출에 사용된 교육배정금은 0원이지만, 누락된 기존 교육납입 2,533,602원으로 기준월 교육배정금은 43,566,398원입니다. 소득중단 중 자발적 납입 중단과 이후 현금하한에 따른 납입 제한은 미래 교육 준비에 영향을 줄 수 있으며, 놓친 납입은 자동 보충되지 않습니다. 스트레스 교육안의 기준월 교육배정금은 60,000,000원입니다. 교육배정 부족은 총자산 부족이나 달성확률을 뜻하지 않습니다.",
+        "evidenceIds": [
+          "E28",
+          "E19",
+          "E27",
+          "E23",
+          "E24",
+          "E25",
+          "E22",
+          "E21",
+          "E20",
+          "E26"
+        ]
+      },
+      {
+        "title": "해석의 한계와 확인할 조건",
+        "text": "비교 기준월 2034-02의 교육배정금은 실제 등록금 지출을 반영한 결과가 아닌 준비금입니다. 희망 배정목표 60,000,000원가 실제 교육비의 시점과 규모에 맞는지 확인해야 합니다. 소득·지출·금리가 고정 반복되고 예금·투자 수익과 물가 변동이 반영되지 않는 월말 모형이므로, 월내 자금 흐름과 세금, 은행의 실제 이자·반올림 처리에 따라 결과가 달라질 수 있습니다. 입력 현금하한 5,000,000원은 추가 자산이 아니며 자발적 납입을 제한하는 조건입니다. 대안은 현금 사용 여력, 부채 축소, 교육 목적 배정 중 무엇을 우선할지에 따라 판단해야 하며, 이 결과만으로 특정 대안을 최적 또는 안전하다고 단정할 수 없습니다.",
+        "evidenceIds": [
+          "E5",
+          "E18",
+          "E27"
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "id": "E1",
+        "title": "기준 월 원리금",
+        "value": 1260593.3165470837,
+        "formatted": "1,260,593원",
+        "unit": "KRW",
+        "source": "src/core.js · 동일 입력 월별 원장 재계산"
+      },
+      {
+        "id": "E2",
+        "title": "최초 순자산",
+        "value": 465000000,
+        "formatted": "465,000,000원",
+        "unit": "KRW",
+        "source": "src/core.js · 동일 입력 월별 원장 재계산"
+      },
+      {
+        "id": "E3",
+        "title": "기존 납입 후 미배정 월예산",
+        "value": 439406.68345291633,
+        "formatted": "439,407원",
+        "unit": "KRW",
+        "source": "src/core.js · 동일 입력 월별 원장 재계산"
+      },
+      {
+        "id": "E4",
+        "title": "대안별 동일 추가 월예산",
+        "value": 400000,
+        "formatted": "400,000원",
+        "unit": "KRW",
+        "source": "src/core.js · 동일 입력 월별 원장 재계산"
+      },
+      {
+        "id": "E5",
+        "title": "비교 기준월",
+        "value": "2034-02",
+        "formatted": "2034-02",
+        "unit": "month",
+        "source": "src/core.js · 동일 입력 월별 원장 재계산"
+      },
+      {
+        "id": "E6",
+        "title": "비교 기간",
+        "value": 87,
+        "formatted": "87개월",
+        "unit": "months",
+        "source": "src/core.js · 동일 입력 월별 원장 재계산"
+      },
+      {
+        "id": "E7",
+        "title": "정상 현금안 총예금 · 교육배정 포함",
+        "value": 120428381.46040396,
+        "formatted": "120,428,381원",
+        "unit": "KRW",
+        "source": "src/core.js · 동일 입력 월별 원장 재계산"
+      },
+      {
+        "id": "E8",
+        "title": "정상 현금안 비배정예금",
+        "value": 74328381.46040396,
+        "formatted": "74,328,381원",
+        "unit": "KRW",
+        "source": "src/core.js · 동일 입력 월별 원장 재계산"
+      },
+      {
+        "id": "E9",
+        "title": "정상 현금안 교육배정금",
+        "value": 46100000,
+        "formatted": "46,100,000원",
+        "unit": "KRW",
+        "source": "src/core.js · 동일 입력 월별 원장 재계산"
+      },
+      {
+        "id": "E10",
+        "title": "정상 현금안 대출잔액",
+        "value": 180489702.57916522,
+        "formatted": "180,489,703원",
+        "unit": "KRW",
+        "source": "src/core.js · 동일 입력 월별 원장 재계산"
+      },
+      {
+        "id": "E11",
+        "title": "정상 추가상환안 대출잔액",
+        "value": 138982748.367983,
+        "formatted": "138,982,748원",
+        "unit": "KRW",
+        "source": "src/core.js · 동일 입력 월별 원장 재계산"
+      },
+      {
+        "id": "E12",
+        "title": "정상 현금안 누적 발생이자",
+        "value": 70161321.11876145,
+        "formatted": "70,161,321원",
+        "unit": "KRW",
+        "source": "src/core.js · 동일 입력 월별 원장 재계산"
+      },
+      {
+        "id": "E13",
+        "title": "정상 추가상환안 누적 발생이자",
+        "value": 63441411.8711551,
+        "formatted": "63,441,412원",
+        "unit": "KRW",
+        "source": "src/core.js · 동일 입력 월별 원장 재계산"
+      },
+      {
+        "id": "E14",
+        "title": "정상 추가상환안 누적 수수료",
+        "value": 12955.036423992462,
+        "formatted": "12,955원",
+        "unit": "KRW",
+        "source": "src/core.js · 동일 입력 월별 원장 재계산"
+      },
+      {
+        "id": "E15",
+        "title": "기준월까지 현금안 대비 추가상환안 이자차이에서 수수료를 뺀 값",
+        "value": 6706954.21118236,
+        "formatted": "6,706,954원",
+        "unit": "KRW",
+        "source": "src/core.js · 동일 입력 월별 원장 재계산"
+      },
+      {
+        "id": "E16",
+        "title": "정상 교육안 교육배정금",
+        "value": 60000000,
+        "formatted": "60,000,000원",
+        "unit": "KRW",
+        "source": "src/core.js · 동일 입력 월별 원장 재계산"
+      },
+      {
+        "id": "E17",
+        "title": "정상 교육안 총예금 · 교육배정 포함",
+        "value": 120428381.46040396,
+        "formatted": "120,428,381원",
+        "unit": "KRW",
+        "source": "src/core.js · 동일 입력 월별 원장 재계산"
+      },
+      {
+        "id": "E18",
+        "title": "교육 희망 배정목표",
+        "value": 60000000,
+        "formatted": "60,000,000원",
+        "unit": "KRW",
+        "source": "src/core.js · 동일 입력 월별 원장 재계산"
+      },
+      {
+        "id": "E19",
+        "title": "스트레스 현금안 최저 비배정예금",
+        "value": 336440.1007174924,
+        "formatted": "336,440원",
+        "unit": "KRW",
+        "source": "src/core.js · 동일 입력 월별 원장 재계산"
+      },
+      {
+        "id": "E20",
+        "title": "스트레스 현금안 기준월 교육배정금",
+        "value": 43566398.04532287,
+        "formatted": "43,566,398원",
+        "unit": "KRW",
+        "source": "src/core.js · 동일 입력 월별 원장 재계산"
+      },
+      {
+        "id": "E21",
+        "title": "스트레스 현금안 누락된 기존 교육납입",
+        "value": 2533601.9546771282,
+        "formatted": "2,533,602원",
+        "unit": "KRW",
+        "source": "src/core.js · 동일 입력 월별 원장 재계산"
+      },
+      {
+        "id": "E22",
+        "title": "스트레스 현금안 의무지출에 사용된 교육배정금",
+        "value": 0,
+        "formatted": "0원",
+        "unit": "KRW",
+        "source": "src/core.js · 동일 입력 월별 원장 재계산"
+      },
+      {
+        "id": "E23",
+        "title": "스트레스 현금안 최대 월 의무미납액",
+        "value": 0,
+        "formatted": "0원",
+        "unit": "KRW",
+        "source": "src/core.js · 동일 입력 월별 원장 재계산"
+      },
+      {
+        "id": "E24",
+        "title": "스트레스 추가상환안 최대 월 의무미납액",
+        "value": 0,
+        "formatted": "0원",
+        "unit": "KRW",
+        "source": "src/core.js · 동일 입력 월별 원장 재계산"
+      },
+      {
+        "id": "E25",
+        "title": "스트레스 교육안 최대 월 의무미납액",
+        "value": 0,
+        "formatted": "0원",
+        "unit": "KRW",
+        "source": "src/core.js · 동일 입력 월별 원장 재계산"
+      },
+      {
+        "id": "E26",
+        "title": "스트레스 교육안 기준월 교육배정금",
+        "value": 60000000,
+        "formatted": "60,000,000원",
+        "unit": "KRW",
+        "source": "src/core.js · 동일 입력 월별 원장 재계산"
+      },
+      {
+        "id": "E27",
+        "title": "입력 현금하한 · 교육배정 제외",
+        "value": 5000000,
+        "formatted": "5,000,000원",
+        "unit": "KRW",
+        "source": "src/core.js · 동일 입력 월별 원장 재계산"
+      },
+      {
+        "id": "E28",
+        "title": "입력 소득중단 기간",
+        "value": 6,
+        "formatted": "6개월",
+        "unit": "months",
+        "source": "src/core.js · 동일 입력 월별 원장 재계산"
+      },
+      {
+        "id": "E29",
+        "title": "정상 현금안 기준월 순자산",
+        "value": 655838678.8812387,
+        "formatted": "655,838,679원",
+        "unit": "KRW",
+        "source": "src/core.js · 동일 입력 월별 원장 재계산"
+      },
+      {
+        "id": "E30",
+        "title": "정상 추가상환안 기준월 순자산",
+        "value": 662545633.0924209,
+        "formatted": "662,545,633원",
+        "unit": "KRW",
+        "source": "src/core.js · 동일 입력 월별 원장 재계산"
+      },
+      {
+        "id": "E31",
+        "title": "정상 교육안 기준월 순자산",
+        "value": 655838678.8812387,
+        "formatted": "655,838,679원",
+        "unit": "KRW",
+        "source": "src/core.js · 동일 입력 월별 원장 재계산"
+      }
+    ],
+    "model": "Codex CLI 기본 모델",
+    "inputHash": "4c00d172d1c05b4d7601fdf8180e48855513bc480ee3f1f4a02db07873c423b5",
+    "provider": "codex_subscription",
+    "authMode": "chatgpt"
+  },
+  "limitations": [
+    "One synthetic household live run; not a guarantee of future answer accuracy or availability.",
+    "ChatGPT-authenticated CLI, no API key used; billing dashboard was not independently audited."
+  ]
+}

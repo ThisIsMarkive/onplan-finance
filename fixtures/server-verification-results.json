@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "recordedAtUTC": "2026-11-16T06:58:30.4230460+00:00",
+  "scope": "Current deterministic calculator API and explicit unavailable AI state; no live OpenAI call or real API key confirmed.",
+  "command": "node --test tests/server.test.mjs",
+  "tests": 18,
+  "passed": 18,
+  "failed": 0,
+  "cancelled": 0,
+  "skipped": 0,
+  "directWorkerGroups": 11,
+  "localHTTPParentGroup": 1,
+  "localHTTPSubtests": 6,
+  "nodeVersion": "v24.22.1",
+  "durationMs": 1124.5556,
+  "artifactValidation": "node scripts/validate-artifact.mjs: passed",
+  "workerSHA256": "3b3c6053f4ec206d3a82cece73b0ccc1154d31e190eeb283645d1b23364ee99f",
+  "devServerSHA256": "a267e1ed6a122694d61cfd353b867687157f5b91e8b1277c8f11c0f074212128",
+  "testSHA256": "33a150dcb836db3358a65576a1c298b0d941f76a963f7eb6eccc046583c54816",
+  "testedBehaviors": [
+    "Server recomputes from financial input and ignores claimed results or labels",
+    "Missing, blank and inconsistent financial inputs return structured422 errors",
+    "Allowed methods and HEAD/no-body semantics",
+    "Same-origin enforcement for both POST APIs",
+    "Exact application/json media type and malformed JSON/UTF-8 rejection",
+    "Declared, actual, multibyte and streamed body limits at32768 bytes",
+    "Oversized stream cancellation",
+    "AI false/null status; explain503; zero outbound fetch under test sentinel environment",
+    "No-store and browser security headers",
+    "Built local HTTP localhost Host/Origin handling",
+    "Fixed-length and chunked request413; external Host guard"
+  ],
+  "limitations": [
+    "No real provider call, latency, token usage or generated-answer quality measured",
+    "Does not replace production-host routing or TLS verification",
+    "No core, UI or documentation edits in this task"
+  ]
+}

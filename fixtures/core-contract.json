@@ -1,0 +1,33 @@
+{
+  "module": "src/core.js",
+  "exports": ["MODEL_VERSION", "NUMERIC_FIELDS", "DATE_FIELDS", "monthlyPayment", "validateInputs", "runPlan"],
+  "validation": "validateInputs(raw) -> {valid:boolean, errors:[{field,message}], input:normalizedObject|null}. runPlan(raw) invalid -> {ok:false,errors}; expected invalid input does not throw.",
+  "dates": "startMonth, educationDate, stressStartMonth: required YYYY-MM strings. educationDate is comparison month even when educationTarget=0.",
+  "numbers": "All NUMERIC_FIELDS required, explicit zero accepted, blank/null/bool/array/nonfinite rejected; 0..1e13 KRW; month counts integer0..600, rates percent0..100.",
+  "success": "{ok:true,modelVersion,input,comparisonMonth,comparisonMonths,projectionMonths,baseline:{normal,stress},strategies:[{id,label,normal,stress}],assumptions:string[],warnings:string[],evidence:object}",
+  "strategyIds": ["cash","debt","education"],
+  "scenario": "{summary:object,path:object[]}. Path includes month0 initial snapshot and months1..projectionMonths. Chart comparison paths should filter month<=comparisonMonths.",
+  "summaryKeyMeanings": {
+    "cash": "Total deposits, includes educationBalance; never add the two as assets.",
+    "freeCash": "cash minus educationBalance.",
+    "loanBalance": "Remaining loan principal; includes overdue principal.",
+    "unpaidInterest": "Accrued loan interest not paid; separate liability.",
+    "unpaidLiving": "Accrued consumption expense not paid; separate liability.",
+    "loanArrears": "Overdue scheduled payments; subset of principal+unpaidInterest, not an additional liability.",
+    "netWorth": "cash+investmentAssets+retirementAssets+homeValue+otherAssets-loanBalance-unpaidInterest-unpaidLiving.",
+    "educationGap": "max(0,educationTarget-educationBalance) at comparison month.",
+    "educationMinimumGap": "max(0,educationMinimum-educationBalance) at comparison month.",
+    "firstLiquidityShortfallMonth": "First month with mandatory payments unpaid, null if none. Distinct from savings shortfall or cash-floor breach.",
+    "minFreeCash": "Minimum non-earmarked deposits through comparison month including initial state.",
+    "cashFloorShortfall": "Shortfall versus preferred floor; does not imply arrears.",
+    "payoffMonth": "Full projection payoff month integer; 0 for no original debt; null if not repaid in projection. Assumes continued fixed input income/expenses.",
+    "cumulativeInterest": "Interest accrued through comparison date, including unpaid interest.",
+    "lifetimeInterestWithinProjection": "Interest through longer fixed-input projection; not guaranteed realized cost.",
+    "cumulativeMissedEducation": "Base planned education payments not made through comparison date; no automatic catch-up.",
+    "cumulativeEducationWithdrawals": "Education earmark consumed to meet mandatory outflows."
+  },
+  "pathFields": ["month","date","isInitial","isStress","cash","educationBalance","freeCash","investmentAssets","retirementAssets","loanBalance","unpaidInterest","unpaidLiving","loanArrears","netWorth","income","livingExpense","livingPaid","loanPayment","loanPaymentDue","interest","principalPayment","extraPrincipal","fee","educationContribution","pensionContribution","investmentContribution","extraEducation","extraUsed","extraUnused","educationWithdrawal","missedEducation","liquidityShortfall","cashFloorShortfall","identityError","savingsPaused"],
+  "evidenceFields": ["monthlyPayment","surplusBeforeSavings","plannedSavings","unallocatedMonthly","requestedExtraMonthly","cashAlternativeIdenticalToBaseline","initialNetWorth","cashIncludesEducationEarmark","returnAssumptionPct","ledgerIdentity","maxLedgerIdentityError","comparisonScope"],
+  "identity": "Net worth change = earned income - accrued living expense - accrued interest - prepayment fee. Principal repayments, investment/pension deposits, education earmarks are transfers.",
+  "comparisonWarning": "No outcome ranking is inherent: debt lowers interest, education raises assigned education balance, cash preserves free cash. Same positive-return assets are not modeled; target success probability not estimated."
+}

@@ -1,0 +1,8 @@
+{
+  "core_sha256": "2d41816289c16b560bde6c0b4885885026f03af47ae090fb64d7b2820a3e4cc9",
+  "delinquency_carry_and_block_verified": true,
+  "next_month_cure_verified": true,
+  "partial_old_plus_new_due_no_doublecount_verified": true,
+  "nonfinite_priority_rejected": true,
+  "scope": "Narrow independent deterministic regression only. No customer, tax engine, runtime LLM or empirical performance verification."
+}
