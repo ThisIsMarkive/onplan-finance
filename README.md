@@ -2,7 +2,7 @@
 
 가계의 현금·교육자금·대출을 한 원장에서 계산하는 한국어 웹 프로토타입입니다. 같은 추가 예산을 현금 유지, 교육자금 배정, 대출 추가상환에 썼을 때의 차이와 소득중단 스트레스를 비교합니다.
 
-**2026-11-16 공개 준비 상태:** [저장소](https://github.com/ThisIsMarkive/onplan-finance)는 생성되었고 소스 업로드 전입니다. [예정 웹 주소](https://onplan-finance.daring-coin-5511.chatgpt.site)는 아직 배포 확인 전이며 초기 대상은 소유자 전용(private)입니다. 공개 GitHub와 웹 접근권한은 별개입니다. **로컬 Codex 구독 연결과 수동 AI 전달 기능을 구현했으며 실제 구독 AI 생성 2건(직접 호출·브라우저 요청)을 확인했습니다.** 기본 계산해설은 규칙 기반입니다.
+**2026-11-16 공개·배포 상태:** [공개 저장소](https://github.com/ThisIsMarkive/onplan-finance)에 소스를 업로드했고 [웹 배포](https://onplan-finance.daring-coin-5511.chatgpt.site)가 성공했습니다. 웹은 현재 소유자 전용(private)이며 로그인 이후 화면 검증은 보류했습니다. 공개 GitHub와 웹 접근권한은 별개입니다. **로컬 Codex 구독 연결과 수동 AI 전달 기능을 구현했으며 실제 구독 AI 생성 2건(직접 호출·브라우저 요청)을 확인했습니다.** 기본 계산해설은 규칙 기반입니다.
 
 ## 실행과 확인
 
@@ -57,7 +57,7 @@ Python 검사는 표준 라이브러리와 포함된 고정 시간가치 모듈�
 
 예제의 대학자금은 기초 무수익 산술에서 4,610만원, 소득중단 6개월만 반영하면 4,430만원, 이후 현금 하한 회복까지 반영하면 약 4,356.64만원입니다. 정책 조건이 다른 계산이며 실제 미래 성과가 아닙니다.
 
-로컬 브라우저에서 빈폼·예제 가져오기·재계산·입력 내보내기·0원 고객·390px 폭, 실제 AI 설명 5개 표시와 수동 요약 복사를 확인했습니다. 전체 브라우저·보조기술 검증은 아닙니다. [CI](.github/workflows/verify.yml)는 저장소 업로드 후 실행될 설정이며 성공 실행 이력은 아직 없습니다.
+로컬 브라우저에서 빈폼·예제 가져오기·재계산·입력 내보내기·0원 고객·390px 폭, 실제 AI 설명 5개 표시와 수동 요약 복사를 확인했습니다. 전체 브라우저·보조기술 검증은 아닙니다. [CI](.github/workflows/verify.yml)는 저장소 업로드 후 실행될 설정이며 원격 실행 결과는 아직 별도 확인하지 않았습니다.
 
 ## 한계와 AI 상태
 
@@ -74,3 +74,5 @@ PyPortfolioOpt/HARK는 별도 연구에서 실행한 선택 모듈이며 현재 
 신규 코드는 [MIT](LICENSE), 제3자 파일은 [별도 고지](THIRD_PARTY_NOTICES.md)를 따릅니다.
 
 [전체 과정](docs/00-project-brief.md) · [검증 이력](docs/04-validation-history.md) · [AI 기록](docs/05-ai-and-human-decisions.md) · [배포 기록](docs/07-deployment-runbook.md) · [구독 AI 사용](docs/08-subscription-ai.md)
+
+다른 컴퓨터의 시작 절차는 [인계 안내](docs/09-handoff-other-computer.md)를 따릅니다.

@@ -1,14 +1,14 @@
 # 실행·공개·배포 기록
 
-2026-11-16 기준. **로컬 Codex 연결·수동 전달 UI 구현과 실제 구독 AI 생성 2건(직접·브라우저 요청) 확인 완료, 소스 업로드·웹 배포 대기**다. 호스팅 사이트의 서버 AI는 연결하지 않는다.
+2026-11-16 기준. **로컬 Codex 연결·수동 전달 UI 구현과 실제 구독 AI 생성 2건(직접·브라우저 요청) 확인 완료, 공개 소스 업로드·소유자 전용 웹 배포 성공**다. 호스팅 사이트의 서버 AI는 연결하지 않는다.
 
 | 항목 | 확인 상태 |
 |---|---|
-| 저장소 | [ThisIsMarkive/onplan-finance](https://github.com/ThisIsMarkive/onplan-finance), 소스 업로드 대기 |
-| 예정 웹 주소 | [onplan-finance.daring-coin-5511.chatgpt.site](https://onplan-finance.daring-coin-5511.chatgpt.site), 소유자 전용(private) 초기 배포·응답 확인 대기 |
-| 코드·배포 버전 | 업로드 커밋·배포 식별자·시각은 실제 완료 후 추가 |
+| 저장소 | [ThisIsMarkive/onplan-finance](https://github.com/ThisIsMarkive/onplan-finance), 최초 코드 공개 커밋 8b90f3ee94e0cf8a7ba533f90b461cb66fdee63a |
+| 배포 웹 주소 | [onplan-finance.daring-coin-5511.chatgpt.site](https://onplan-finance.daring-coin-5511.chatgpt.site), 소유자 전용(private) 배포 성공, 로그인 화면 확인. 로그인 이후 화면 검증 보류 |
+| 코드·배포 버전 | Sites 소스 a2423a9fd22bc94465835ae38e299808783bacec; 배포 appgdep_6afab1bcd46c81918978b802a46d1a88; 2026-11-16 07:33:27 UTC 성공 |
 | 계산·연결 검증 | [통합 기록](../artifacts/verification.json): JS 50(코어18·서버18·모의 브리지14)·Python24·원장대조88,992. 단위·중첩이 달라 합산하지 않음 |
-| 화면·API·배포 검수 | 로컬 브라우저·서버 API 확인 기록 있음; 배포 후 확인 대기 |
+| 화면·API·배포 검수 | 로컬 브라우저·서버 API·실제 AI 확인. 원격 배포 성공과 로그인 화면 확인; 로그인 뒤 동작은 미검증 |
 | 호스팅 AI | 서버 모델 연결 없음. 계산과 수동 전달용 요약 경로로 운영 |
 | 로컬 AI | [직접 호출 기록](../artifacts/live-ai-verification.json), 2026-11-16 07:20:46 UTC, 29.823초. 브라우저 요청도 성공하여 실제 생성 2건·설명 5개 표시 확인. 수정 전 시작 중단 3회는 별도 |
 | AI 검증 한계 | 모의 실행을 포함한 브리지 14개와 실제 생성 2건 분리. 실제 모델 ID 미제공, 계정 청구 화면 미감사. 합성 고객·한 브라우저 범위 |
@@ -62,3 +62,5 @@ build는 브라우저 파일·공통 코어·Worker를 묶어 dist/server/index.
 구독 AI 연결은 사용자의 로컬 Codex CLI를 사용한다. API 키를 만들거나 요청하지 않으며 인증파일·세션 토큰을 저장소·브라우저·호스팅 서버로 복사하지 않는다. API로 자동 전환하거나 크레딧을 추가 구매하지 않는다. 구독 한도·기존 크레딧·계정 정책은 적용될 수 있다. 인증·시간초과·금지 도구·응답 검증 등의 모의 시험과 실제 응답의 숫자·근거·해석 검토를 구분한다. 아직 시험하지 않은 실제 장애와 계정 청구 조건까지 검증한 것으로 쓰지 않는다.
 
 신규 코드는 [MIT](../LICENSE), 제3자 파일은 [별도 고지](../THIRD_PARTY_NOTICES.md)를 따른다. 연구 의존성 전체가 루트 MIT로 바뀌지 않는다. 대회 제출은 [공식 안내](https://www.ifpk.org/?data_usn=181814&mnu_usn=67&mode=view&page_no=1)의 본문·부록·식별정보·동의서 요건을 별도로 충족해야 한다.
+
+GitHub와 Sites 소스는 각각의 커밋을 사용합니다. 첫 게시 이후의 문서 정정은 실행 코드 변경과 구분합니다. GitHub Actions 원격 실행은 아직 확인하지 않았으며 로컬 50개 시험 통과를 원격 성공으로 대신 표시하지 않습니다.

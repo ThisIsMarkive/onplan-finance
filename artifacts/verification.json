@@ -59,8 +59,16 @@
     "scope": "Local opt-in mode only"
   },
   "publication": {
+    "sourceUpload": "succeeded",
+    "siteDeploymentId": "appgdep_6afab1bcd46c81918978b802a46d1a88",
+    "siteDeployment": "succeeded",
+    "siteAccess": "owner-private",
+    "siteSourceCommit": "a2423a9fd22bc94465835ae38e299808783bacec",
+    "remoteBrowserVerification": "Login gate reached; post-login verification deferred",
+    "deployedAtUTC": "2026-11-16T07:33:27.910549+00:00",
+    "siteURL": "https://onplan-finance.daring-coin-5511.chatgpt.site",
+    "githubCodeCommit": "8b90f3ee94e0cf8a7ba533f90b461cb66fdee63a",
     "githubRepository": "https://github.com/ThisIsMarkive/onplan-finance",
-    "sourceUpload": "pending",
-    "siteDeployment": "pending"
+    "githubActions": "not yet verified"
   }
 }
